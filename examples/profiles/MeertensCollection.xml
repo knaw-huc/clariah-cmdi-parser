@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ComponentSpec isProfile="true" CMDVersion="1.2" CMDOriginalVersion="1.1" xsi:noNamespaceSchemaLocation="https://infra.clarin.eu/CMDI/1.x/xsd/cmd-component.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Header>
+        <ID>clarin.eu:cr1:p_1440426460262</ID>
+        <Name>MeertensCollection</Name>
+        <Description>Information on a collection at the Meertens Institute.</Description>
+        <Status>development</Status>
+    </Header>
+    <Component name="MeertensCollection" CardinalityMin="1" CardinalityMax="1">
+        <Component name="CoreCollectionInformation" ComponentRef="clarin.eu:cr1:c_1440426460261" CardinalityMin="1" CardinalityMax="1">
+            <Element name="creator" ConceptLink="http://purl.org/dc/terms/creator" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="false"/>
+            <Element name="title" ConceptLink="http://purl.org/dc/terms/title" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" Multilingual="true" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmdi/cues/1"/>
+            <Element name="description" ConceptLink="http://purl.org/dc/terms/description" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Multilingual="true"/>
+            <Element name="created" ConceptLink="http://purl.org/dc/terms/created" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Multilingual="true"/>
+            <Element name="rights" ConceptLink="http://purl.org/dc/terms/rights" CardinalityMin="0" CardinalityMax="unbounded">
+                <ValueScheme>
+                    <Vocabulary>
+                        <enumeration>
+                            <item ConceptLink="" AppInfo="">Open Access Creative Commons Zero Waiver</item>
+                            <item ConceptLink="" AppInfo="">Open Access</item>
+                            <item ConceptLink="" AppInfo="">Restricted Access</item>
+                            <item ConceptLink="" AppInfo="">Other Access</item>
+                        </enumeration>
+                    </Vocabulary>
+                </ValueScheme>
+            </Element>
+            <Element name="rightsInfo" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="embargo" ConceptLink="http://hdl.handle.net/11459/CCR_C_ceacf161-c001-305b-2a6b-9db2916fa68e" ValueScheme="date" CardinalityMin="0" CardinalityMax="1"/>
+            <Element name="audience" ConceptLink="http://purl.org/dc/terms/audience" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="contributor" ConceptLink="http://purl.org/dc/terms/contributor" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="subject" ConceptLink="http://purl.org/dc/terms/subject" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="spatial" ConceptLink=" http://purl.org/dc/terms/spatial" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="temporal" ConceptLink=" http://purl.org/dc/terms/temporal" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="source" ConceptLink="http://purl.org/dc/terms/source" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="identifier" ConceptLink=" http://purl.org/dc/terms/identifier" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="format" ConceptLink="http://purl.org/dc/terms/format" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="relation" ConceptLink="http://purl.org/dc/terms/relation" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="language" ConceptLink="http://purl.org/dc/terms/language" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="remarks" ConceptLink="http://hdl.handle.net/11459/CCR_C-2983_48e81b2c-3a19-a74b-725c-28fea87dcd2d  " ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="publisher" ConceptLink="http://purl.org/dc/elements/1.1/publisher" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="type" ConceptLink="http://purl.org/dc/terms/type" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="rightsHolder" ConceptLink="http://purl.org/dc/terms/rightsHolder" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="collectionID" ValueScheme="int" CardinalityMin="1" CardinalityMax="1"/>
+            <Element name="extent" ConceptLink="http://hdl.handle.net/11459/CCR_C-5337_dcc36580-999f-8d14-9d17-4d6d9ed7f342  " ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="project" ConceptLink="http://hdl.handle.net/11459/CCR_C-2537_fa206273-223a-f4fa-dde3-ba59b965701f  " ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="projectStatus" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="physicalCondition" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="legalStatus" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="typeOfMaterial" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="conservation" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="restoration" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="digitalFiles" ConceptLink="http://hdl.handle.net/11459/CCR_C_8a6eadc4-1b30-b57e-f156-41d4fd6fc2ad" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="furtherAccessibilityDesired" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="provenance" ConceptLink="http://purl.org/dc/terms/provenance" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="shortTitle" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="storageLocation" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Multilingual="true"/>
+            <Element name="web" ValueScheme="boolean" CardinalityMin="0" CardinalityMax="1"/>
+            <Element name="category" ConceptLink="http://hdl.handle.net/11459/CCR_C-3646_60ef52ab-b400-cb07-7cc2-bda80ec72001 " CardinalityMin="0" CardinalityMax="1">
+                <ValueScheme>
+                    <Vocabulary>
+                        <enumeration>
+                            <item ConceptLink="" AppInfo="">MI General</item>
+                            <item ConceptLink="" AppInfo="">Dialectology/language variation</item>
+                            <item ConceptLink="" AppInfo="">Ethnology</item>
+                            <item ConceptLink="" AppInfo="">Ethnology: Dutch song</item>
+                            <item ConceptLink="" AppInfo="">Onomastics</item>
+                            <item ConceptLink="" AppInfo="">Library</item>
+                            <item ConceptLink="" AppInfo="">Realia</item>
+                        </enumeration>
+                    </Vocabulary>
+                </ValueScheme>
+            </Element>
+            <Element name="subcategory" ConceptLink="http://hdl.handle.net/11459/CCR_C-5311_dd01255f-ebbf-20dc-f519-a17c90a59400" CardinalityMin="0" CardinalityMax="1">
+                <ValueScheme>
+                    <Vocabulary>
+                        <enumeration>
+                            <item ConceptLink="" AppInfo="">General</item>
+                            <item ConceptLink="" AppInfo="">Committees</item>
+                            <item ConceptLink="" AppInfo="">Subcommittees</item>
+                            <item ConceptLink="" AppInfo="">Research projects</item>
+                            <item ConceptLink="" AppInfo="">Automation</item>
+                            <item ConceptLink="" AppInfo="">Financial administration</item>
+                            <item ConceptLink="" AppInfo="">Staff</item>
+                            <item ConceptLink="" AppInfo="">Projects</item>
+                            <item ConceptLink="" AppInfo="">Questionnaires</item>
+                            <item ConceptLink="" AppInfo="">Databases and card-index systems</item>
+                            <item ConceptLink="" AppInfo="">Periodicals</item>
+                            <item ConceptLink="" AppInfo="">Internal archives and collections</item>
+                            <item ConceptLink="" AppInfo="">Externally acquired archives and collections</item>
+                            <item ConceptLink="" AppInfo="">Conferences / symposia</item>
+                            <item ConceptLink="" AppInfo="">Committees misc.</item>
+                            <item ConceptLink="" AppInfo="">PR</item>
+                            <item ConceptLink="" AppInfo="">Provision of information</item>
+                        </enumeration>
+                    </Vocabulary>
+                </ValueScheme>
+            </Element>
+            <Element name="license" ConceptLink="http://hdl.handle.net/11459/CCR_C-2457_45bbaa1a-7002-2ecd-ab9d-57a189f694a6" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Multilingual="false"/>
+        </Component>
+        <Component name="Inventory" CardinalityMin="0" CardinalityMax="1">
+            <Component name="CoreResourceInformation" ComponentRef="clarin.eu:cr1:c_1454489235462" CardinalityMin="0" CardinalityMax="unbounded">
+                <Element name="inventoryId" ConceptLink="http://hdl.handle.net/11459/CCR_C_2667a52a-6d6c-8a8f-a079-b97ba9c20284" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" Multilingual="false"/>
+                <Element name="description" ConceptLink="http://purl.org/dc/terms/description" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" Multilingual="true" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmdi/cues/1"/>
+                <Element name="medium" ConceptLink="http://hdl.handle.net/11459/CCR_C-2458_6d94aa4b-09f5-bd3e-0c00-23a457840463" CardinalityMin="0" CardinalityMax="unbounded">
+                    <ValueScheme>
+                        <Vocabulary>
+                            <enumeration>
+                                <item ConceptLink="" AppInfo="">server</item>
+                                <item ConceptLink="" AppInfo="">cdrom</item>
+                                <item ConceptLink="" AppInfo="">memorystick</item>
+                                <item ConceptLink="" AppInfo="">harddisc</item>
+                                <item ConceptLink="" AppInfo="">dvd</item>
+                                <item ConceptLink="" AppInfo="">diskette</item>
+                                <item ConceptLink="" AppInfo="">hi8</item>
+                            </enumeration>
+                        </Vocabulary>
+                    </ValueScheme>
+                </Element>
+                <Element name="oldBoxNumber" ConceptLink="http://hdl.handle.net/11459/CCR_C_9eb975d2-a4a4-fdfb-57a8-a3cf9af9bdbe" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Multilingual="false"/>
+                <Component name="TechnicalMetadata" ConceptLink="http://hdl.handle.net/11459/CCR_C_4362eadb-3bc1-de33-cb11-47de192dd163" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="digital" ConceptLink="http://hdl.handle.net/11459/CCR_C_8a26a21a-71c9-b5d9-badd-a2de7363e60f" ValueScheme="boolean" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmdi/cues/1"/>
+                    <Component name="Size" ConceptLink="http://hdl.handle.net/11459/CCR_C_d6993b58-e66f-34a1-73aa-2d02cad42e85" CardinalityMin="0" CardinalityMax="1">
+                        <Element name="number" ConceptLink="http://hdl.handle.net/11459/CCR_C-6177_8e40366a-172a-9f6a-cc6a-fcb982209d53" ValueScheme="decimal" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmdi/cues/1"/>
+                        <Element name="unit" ConceptLink="http://hdl.handle.net/11459/CCR_C-2583_5f5cb491-1037-8d46-d685-ccebfc0233f7" CardinalityMin="1" CardinalityMax="1">
+                            <ValueScheme>
+                                <Vocabulary>
+                                    <enumeration>
+                                        <item ConceptLink="" AppInfo="kilobyte">KB</item>
+                                        <item ConceptLink="" AppInfo="megabyte">MB</item>
+                                        <item ConceptLink="" AppInfo="gigabyte">GB</item>
+                                        <item ConceptLink="" AppInfo="terabyte">TB</item>
+                                    </enumeration>
+                                </Vocabulary>
+                            </ValueScheme>
+                        </Element>
+                    </Component>
+                </Component>
+            </Component>
+        </Component>
+    </Component>
+</ComponentSpec>
+

@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ComponentSpec isProfile="true" CMDVersion="1.2" CMDOriginalVersion="1.1" xsi:noNamespaceSchemaLocation="https://infra.clarin.eu/CMDI/1.x/xsd/cmd-component.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cue="http://www.clarin.eu/cmd/cues/1" xmlns:clariah="http://www.clariah.eu/">
+    <Header>
+        <ID>clarin.eu:cr1:p_1440426460262</ID>
+        <Name>MeertensCollection</Name>
+        <Description>Information on a collection at the Meertens Institute.</Description>
+        <Status>development</Status>
+    </Header>
+    <Component name="MeertensCollection">
+        <clariah:label xml:lang="nl">Meertens collectie</clariah:label>
+        <Component name="CoreCollectionInformation">
+            <clariah:label xml:lang="nl">Core-collectie informatie</clariah:label>
+            <Element name="creator">
+                <clariah:label xml:lang="nl">Auteur</clariah:label>
+            </Element>
+            <Element name="title" cue:displayOrder="2" xmlns:cue="http://www.clarin.eu/cmdi/cues/1">
+                <clariah:label xml:lang="nl">Titel</clariah:label>
+            </Element>
+            <Element name="description" CardinalityMin="1" cue:inputHeight="8" cue:inputWidth="60" xmlns:cue="http://www.clarin.eu/cmdi/cues/1">
+                <clariah:label xml:lang="nl">Beschrijving</clariah:label>
+            </Element>
+            <Element name="rights">
+                <clariah:label xml:lang="nl">Rechten</clariah:label>
+            </Element>
+            <Element name="created">
+                <clariah:label xml:lang="nl">Aangemaakt op</clariah:label>
+                <AutoValue>now</AutoValue>
+            </Element>
+            <Element name="rightsInfo">
+                <clariah:label xml:lang="nl">Rechteninformatie</clariah:label>
+            </Element>
+            <Element name="embargo">
+                <clariah:label xml:lang="nl">Embargo</clariah:label>
+            </Element>
+            <Element name="audience">
+                <clariah:label xml:lang="nl">Doelgroep</clariah:label>
+            </Element>
+            <Element name="contributor">
+                <clariah:label xml:lang="nl">Medewerker</clariah:label>
+            </Element>
+            <Element name="subject">
+                <clariah:label xml:lang="nl">Onderwerp</clariah:label>
+            </Element>
+            <Element name="spatial">
+                <clariah:label xml:lang="nl">Ruimte</clariah:label>
+            </Element>
+            <Element name="temporal">
+                <clariah:label xml:lang="nl">Tijd</clariah:label>
+            </Element>
+            <Element name="source">
+                <clariah:label xml:lang="nl">Bron</clariah:label>
+            </Element>
+            <Element name="identifier">
+                <clariah:label xml:lang="nl">Identifier</clariah:label>
+            </Element>
+            <Element name="format">
+                <clariah:label xml:lang="nl">Formaat</clariah:label>
+            </Element>
+            <Element name="relation">
+                <clariah:label xml:lang="nl">Relatie</clariah:label>
+            </Element>
+            <Element name="language">
+                <clariah:label xml:lang="nl">Taal</clariah:label>
+                <clariah:autoCompleteURI>https://vocabularies.clarin.eu/clavas/public/api/autocomplete/</clariah:autoCompleteURI>
+            </Element>
+            <Element name="remarks" cue:inputWidth="50" cue:inputHeight="8">
+                <clariah:label xml:lang="nl">Opmerkingen</clariah:label>
+            </Element>
+            <Element name="publisher">
+                <clariah:label xml:lang="nl">Uitgever</clariah:label>
+            </Element>
+            <Element name="type"/>
+            <Element name="rightsHolder">
+                <clariah:label xml:lang="nl">Rechthebbende</clariah:label>
+            </Element>
+            <Element name="collectionID" cue:displayOrder="1" xmlns:cue="http://www.clarin.eu/cmdi/cues/1">
+                <clariah:label xml:lang="nl">Collectie ID</clariah:label>
+            </Element>
+            <Element name="extent">
+                <clariah:label xml:lang="nl">Omvang</clariah:label>
+            </Element>
+            <Element name="project"/>
+            <Element name="projectStatus">
+                <clariah:label xml:lang="nl">Project status</clariah:label>
+            </Element>
+            <Element name="physicalCondition">
+                <clariah:label xml:lang="nl">Fysieke conditie</clariah:label>
+            </Element>
+            <Element name="legalStatus">
+                <clariah:label xml:lang="nl">Wettelijke status</clariah:label>
+            </Element>
+            <Element name="typeOfMaterial">
+                <clariah:label xml:lang="nl">Materiaalsoort</clariah:label>
+            </Element>
+            <Element name="conservation">
+                <clariah:label xml:lang="nl">Conservering</clariah:label>
+            </Element>
+            <Element name="restoration">
+                <clariah:label xml:lang="nl">Restauratie</clariah:label>
+            </Element>
+            <Element name="digitalFiles">
+                <clariah:label xml:lang="nl">Digitale bestanden</clariah:label>
+            </Element>
+            <Element name="furtherAccessibilityDesired">
+                <clariah:label xml:lang="nl">Verdere toegang</clariah:label>
+            </Element>
+            <Element name="provenance" cue:hide="yes" xmlns:cue="http://www.clarin.eu/cmdi/cues/1">
+                <clariah:label xml:lang="nl">Herkomst</clariah:label>
+                <AutoValue>default:Meertens Instituut</AutoValue>
+            </Element>
+            <Element name="shortTitle">
+                <clariah:label xml:lang="nl">Titel kort</clariah:label>
+            </Element>
+            <Element name="storageLocation">
+                <clariah:label xml:lang="nl">Opslaglocatie</clariah:label>
+            </Element>
+            <Element name="category">
+                <clariah:label xml:lang="nl">Categorie</clariah:label>
+                <ValueScheme>
+                    <Vocabulary>
+                        <enumeration>
+                            <item><clariah:label xml:lang="nl">MI Algemeen</clariah:label><clariah:value>MI General</clariah:value></item>
+                            <item><clariah:label xml:lang="nl">Dialectologie/taalvariatie</clariah:label><clariah:value>Dialectology/language variation</clariah:value></item>
+                            <item><clariah:label xml:lang="nl">Etnologie</clariah:label><clariah:value>Ethnology</clariah:value></item>
+                            <item><clariah:label xml:lang="nl">Etnologie: Lied</clariah:label><clariah:value>Ethnology: Dutch song</clariah:value></item>
+                            <item><clariah:label xml:lang="nl">Naamkunde</clariah:label><clariah:value>Onomastics</clariah:value></item>
+                            <item><clariah:label xml:lang="nl">Bibliotheek</clariah:label><clariah:value>Library</clariah:value></item>
+                            <item>Realia</item>
+                        </enumeration>
+                    </Vocabulary>
+                </ValueScheme>
+            </Element>
+            <Element name="subcategory">
+                <clariah:label xml:lang="nl">Subcategorie</clariah:label>
+                <ValueScheme>
+                    <Vocabulary>
+                        <enumeration>
+                            <item><clariah:label xml:lang="nl">Algemeen</clariah:label><clariah:value>General</clariah:value></item>
+                            <item><clariah:label xml:lang="nl">Comité's</clariah:label><clariah:value>Committees</clariah:value></item>
+                            <item><clariah:label xml:lang="nl">Subcomité's</clariah:label><clariah:value>Subcommittees</clariah:value></item>
+                            <item><clariah:label xml:lang="nl">Onderzoeksprojecten</clariah:label><clariah:value>Research projects</clariah:value></item>
+                            <item><clariah:label xml:lang="nl">Automatisering</clariah:label><clariah:value>Automation</clariah:value></item>
+                            <item><clariah:label xml:lang="nl">Financiële administratie</clariah:label><clariah:value>Financial administration</clariah:value></item>
+                            <item><clariah:label xml:lang="nl">Staf</clariah:label><clariah:value>Staff</clariah:value></item>
+                            <item><clariah:label xml:lang="nl">Projecten</clariah:label><clariah:value>Projects</clariah:value></item>
+                            <item><clariah:label xml:lang="nl">Vragenlijsten</clariah:label><clariah:value>Questionnaires</clariah:value></item>
+                            <item><clariah:label xml:lang="nl">Databases en kaartsystemen</clariah:label><clariah:value>Databases and card-index systems</clariah:value></item>
+                            <item><clariah:label xml:lang="nl">Periodieken</clariah:label><clariah:value>Periodicals</clariah:value></item>
+                            <item><clariah:label xml:lang="nl">Interne archieven en collecties</clariah:label><clariah:value>Internal archives and collections</clariah:value></item>
+                            <item><clariah:label xml:lang="nl">Verworven archieven en collecties</clariah:label><clariah:value>Externally acquired archives and collections</clariah:value></item>
+                            <item><clariah:label xml:lang="nl">Conferenties / symposia</clariah:label><clariah:value>Conferences / symposia</clariah:value></item>
+                            <item><clariah:label xml:lang="nl">Commité's divers</clariah:label><clariah:value>Committees misc.</clariah:value></item>
+                            <item>PR</item>
+                            <item><clariah:label xml:lang="nl">Informatievoorziening</clariah:label><clariah:value>Provision of information</clariah:value></item>
+                        </enumeration>
+                    </Vocabulary>
+                </ValueScheme>
+            </Element>
+            <Element name="license">
+                <clariah:label xml:lang="nl">Licentie</clariah:label>
+            </Element>
+        </Component>
+        <Component name="Inventory">
+            <clariah:label>Inhoud</clariah:label>
+            <Component name="CoreResourceInformation"><clariah:resource>all</clariah:resource>  
+            <clariah:label>Informatie resource</clariah:label>
+            <Element name="inventoryId">
+               <clariah:label>Inventaris ID</clariah:label> 
+            </Element>
+            <Element name="description">
+                <clariah:label>Beschrijving</clariah:label> 
+            </Element>
+            <Element name="medium">
+                <clariah:label>Medium</clariah:label> 
+            </Element>
+            <Element name="oldBoxNumber">
+                <clariah:label>Doosnummer</clariah:label> 
+            </Element>
+            <Component name="TechnicalMetadata">
+                 <clariah:label>Technische metadata</clariah:label> 
+                 <Element name="digital">
+                      <clariah:label>Digitaal</clariah:label> 
+                 </Element>
+                    <Component name="Size" >
+                         <clariah:label>Omvang</clariah:label> 
+                         <Element name="number" >
+                              <clariah:label>Grootte</clariah:label> 
+                         </Element>
+                        <Element name="unit">
+                             <clariah:label>Eenheid</clariah:label> 
+                        </Element>
+                    </Component>
+                </Component>
+            </Component>
+        </Component>
+    </Component>
+</ComponentSpec>

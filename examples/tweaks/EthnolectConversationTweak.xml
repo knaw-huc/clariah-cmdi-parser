@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ComponentSpec isProfile="true" CMDVersion="1.2" CMDOriginalVersion="1.1" xsi:noNamespaceSchemaLocation="https://infra.clarin.eu/CMDI/1.x/xsd/cmd-component.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cue="http://www.clarin.eu/cmd/cues/1" xmlns:clariah="http://www.clariah.eu/">
+    <Header>
+        <ID>clarin.eu:cr1:p_1454489235460</ID>
+        <Name>EthnolectConversation</Name>
+        <Description>TODO</Description>
+        <Status>development</Status>
+    </Header>
+    <Component name="EthnolectConversation" CardinalityMin="1" CardinalityMax="1">
+        <clariah:label>Ethnolect Conversation</clariah:label>
+        <Element name="id" cue:inputHeight="2" cue:inputWidth="10" xmlns:cue="http://www.clarin.eu/cmdi/cues/1">
+            <clariah:label>ID</clariah:label>
+        </Element>
+        <Element name="title" cue:inputWidth="60" xmlns:cue="http://www.clarin.eu/cmdi/cues/1">
+            <clariah:label>Title</clariah:label>
+        </Element>
+        <Element name="modificationDate">
+            <clariah:label>Modification date</clariah:label>
+        </Element>
+        <Element name="kindOfConversation"><clariah:label>Kind of conversation</clariah:label></Element>
+        <Element name="interviewDate">
+            <clariah:label>Interview date</clariah:label>
+        </Element>
+        <Element name="city" >
+            <clariah:label>City</clariah:label>
+        </Element>
+        <Component name="ProtocolFile">
+            <clariah:label>Protocol file</clariah:label>
+            <Component name="CoreResourceInformation">
+                <clariah:label>Core resource information</clariah:label>
+                <clariah:resource>.xls,.xlsx</clariah:resource>
+                <Element name="inventoryId" >
+                    <clariah:label>Inventory ID</clariah:label>
+                </Element>
+                <Element name="description" cue:inputHeight="8" cue:inputWidth="60" xmlns:cue="http://www.clarin.eu/cmdi/cues/1">
+                    <clariah:label>Description</clariah:label>
+                </Element>
+                <Element name="medium" >
+                    <clariah:label>Medium</clariah:label>
+                </Element>
+                <Element name="oldBoxNumber" >
+                    <clariah:label>Old box number</clariah:label>
+                </Element>
+                <Component name="TechnicalMetadata">
+                    <clariah:label>Technical metadata</clariah:label>
+                    <Element name="digital" >
+                        <clariah:label>Digital</clariah:label>
+                    </Element>
+                    <Component name="Size">                        
+                        <Element name="number">
+                            <clariah:label>Number</clariah:label>
+                        </Element>
+                        <Element name="unit">
+                            <clariah:label>Unit</clariah:label>
+                        </Element>
+                    </Component>
+                </Component>
+            </Component>
+        </Component>
+        <Component name="ElanFile">
+            <clariah:label>Elan file</clariah:label>
+            <Component name="CoreResourceInformation">
+                <clariah:label>Core resource information</clariah:label>
+                <clariah:resource>.eaf</clariah:resource>
+                <Element name="inventoryId" >
+                    <clariah:label>Inventory ID</clariah:label>
+                </Element>
+                <Element name="description" cue:inputHeight="8" cue:inputWidth="60" xmlns:cue="http://www.clarin.eu/cmdi/cues/1">
+                    <clariah:label>Description</clariah:label>
+                </Element>
+                <Element name="medium" >
+                    <clariah:label>Medium</clariah:label>
+                </Element>
+                <Element name="oldBoxNumber" >
+                    <clariah:label>Old box number</clariah:label>
+                </Element>
+                <Component name="TechnicalMetadata">
+                    <clariah:label>Technical metadata</clariah:label>
+                    <Element name="digital" >
+                        <clariah:label>Digital</clariah:label>
+                    </Element>
+                    <Component name="Size">                        
+                        <Element name="number">
+                            <clariah:label>Number</clariah:label>
+                        </Element>
+                        <Element name="unit">
+                            <clariah:label>Unit</clariah:label>
+                        </Element>
+                    </Component>
+                </Component>
+            </Component>
+        </Component>
+        <Component name="AudioFile">
+            <clariah:label>Audio file</clariah:label>
+            <Component name="CoreResourceInformation">
+                <clariah:label>Core resource information</clariah:label>
+                <clariah:resource>audio/*</clariah:resource>
+                <Element name="inventoryId" >
+                    <clariah:label>Inventory ID</clariah:label>
+                </Element>
+                <Element name="description" cue:inputHeight="8" cue:inputWidth="60" xmlns:cue="http://www.clarin.eu/cmdi/cues/1">
+                    <clariah:label>Description</clariah:label>
+                </Element>
+                <Element name="medium" >
+                    <clariah:label>Medium</clariah:label>
+                </Element>
+                <Element name="oldBoxNumber" >
+                    <clariah:label>Old box number</clariah:label>
+                </Element>
+                <Component name="TechnicalMetadata">
+                    <clariah:label>Technical metadata</clariah:label>
+                    <Element name="digital" >
+                        <clariah:label>Digital</clariah:label>
+                    </Element>
+                    <Component name="Size">                        
+                        <Element name="number">
+                            <clariah:label>Number</clariah:label>
+                        </Element>
+                        <Element name="unit">
+                            <clariah:label>Unit</clariah:label>
+                        </Element>
+                    </Component>
+                </Component>
+            </Component>
+        </Component>
+        <Component name="Speaker">
+            <Element name="id" >
+                <clariah:label>ID</clariah:label>
+            </Element>
+            <Element name="nameCode" >
+                <clariah:label>Name code</clariah:label>
+            </Element>
+            <Element name="city">
+                <clariah:label>City</clariah:label>
+            </Element>
+            <Element name="ageGroup">
+                <clariah:label>Age group</clariah:label>
+            </Element>
+            <Element name="languageBackground">
+                <clariah:label>Language background</clariah:label>
+            </Element>
+        </Component>
+    </Component>
+</ComponentSpec>

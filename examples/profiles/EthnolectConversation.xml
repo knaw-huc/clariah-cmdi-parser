@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ComponentSpec isProfile="true" CMDVersion="1.2" CMDOriginalVersion="1.1" xsi:noNamespaceSchemaLocation="https://infra.clarin.eu/CMDI/1.x/xsd/cmd-component.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Header>
+        <ID>clarin.eu:cr1:p_1454489235460</ID>
+        <Name>EthnolectConversation</Name>
+        <Description>TODO</Description>
+        <Status>development</Status>
+    </Header>
+    <Component name="EthnolectConversation" CardinalityMin="1" CardinalityMax="1">
+        <Element name="id" ConceptLink="http://hdl.handle.net/11459/CCR_C-3894_4d08cc31-25fe-af0c-add4-ca7bdc12f5f7" ValueScheme="int" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmdi/cues/1"/>
+        <Element name="title" ConceptLink="http://hdl.handle.net/11459/CCR_C-6850_88e029a4-bc0a-8476-e3a4-e8db1e2acc64" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmdi/cues/1"/>
+        <Element name="modificationDate" ConceptLink="http://hdl.handle.net/11459/CCR_C-365_26e7152b-4d4f-d72c-c73b-9079fcdd9e0c" ValueScheme="date" CardinalityMin="0" CardinalityMax="1"/>
+        <Element name="kindOfConversation" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+        <Element name="interviewDate" ValueScheme="date" CardinalityMin="0" CardinalityMax="1"/>
+        <Element name="city" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
+        <Component name="ProtocolFile" CardinalityMin="0" CardinalityMax="1">
+            <Component name="CoreResourceInformation" ComponentRef="clarin.eu:cr1:c_1454489235462" CardinalityMin="1" CardinalityMax="1">
+                <Element name="inventoryId" ConceptLink="http://hdl.handle.net/11459/CCR_C_2667a52a-6d6c-8a8f-a079-b97ba9c20284" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" Multilingual="false"/>
+                <Element name="description" ConceptLink="http://purl.org/dc/terms/description" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" Multilingual="true" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmdi/cues/1"/>
+                <Element name="medium" ConceptLink="http://hdl.handle.net/11459/CCR_C-2458_6d94aa4b-09f5-bd3e-0c00-23a457840463" CardinalityMin="0" CardinalityMax="unbounded">
+                    <ValueScheme>
+                        <Vocabulary>
+                            <enumeration>
+                                <item ConceptLink="" AppInfo="">server</item>
+                                <item ConceptLink="" AppInfo="">cdrom</item>
+                                <item ConceptLink="" AppInfo="">memorystick</item>
+                                <item ConceptLink="" AppInfo="">harddisc</item>
+                                <item ConceptLink="" AppInfo="">dvd</item>
+                                <item ConceptLink="" AppInfo="">diskette</item>
+                                <item ConceptLink="" AppInfo="">hi8</item>
+                            </enumeration>
+                        </Vocabulary>
+                    </ValueScheme>
+                </Element>
+                <Element name="oldBoxNumber" ConceptLink="http://hdl.handle.net/11459/CCR_C_9eb975d2-a4a4-fdfb-57a8-a3cf9af9bdbe" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Multilingual="false"/>
+                <Component name="TechnicalMetadata" ConceptLink="http://hdl.handle.net/11459/CCR_C_4362eadb-3bc1-de33-cb11-47de192dd163" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="digital" ConceptLink="http://hdl.handle.net/11459/CCR_C_8a26a21a-71c9-b5d9-badd-a2de7363e60f" ValueScheme="boolean" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmdi/cues/1"/>
+                    <Component name="Size" ConceptLink="http://hdl.handle.net/11459/CCR_C_d6993b58-e66f-34a1-73aa-2d02cad42e85" CardinalityMin="0" CardinalityMax="1">
+                        <Element name="number" ConceptLink="http://hdl.handle.net/11459/CCR_C-6177_8e40366a-172a-9f6a-cc6a-fcb982209d53" ValueScheme="decimal" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmdi/cues/1"/>
+                        <Element name="unit" ConceptLink="http://hdl.handle.net/11459/CCR_C-2583_5f5cb491-1037-8d46-d685-ccebfc0233f7" CardinalityMin="1" CardinalityMax="1">
+                            <ValueScheme>
+                                <Vocabulary>
+                                    <enumeration>
+                                        <item ConceptLink="" AppInfo="kilobyte">KB</item>
+                                        <item ConceptLink="" AppInfo="megabyte">MB</item>
+                                        <item ConceptLink="" AppInfo="gigabyte">GB</item>
+                                        <item ConceptLink="" AppInfo="terabyte">TB</item>
+                                    </enumeration>
+                                </Vocabulary>
+                            </ValueScheme>
+                        </Element>
+                    </Component>
+                </Component>
+            </Component>
+        </Component>
+        <Component name="ElanFile" CardinalityMin="0" CardinalityMax="unbounded">
+            <Component name="CoreResourceInformation" ComponentRef="clarin.eu:cr1:c_1454489235462" CardinalityMin="1" CardinalityMax="1">
+                <Element name="inventoryId" ConceptLink="http://hdl.handle.net/11459/CCR_C_2667a52a-6d6c-8a8f-a079-b97ba9c20284" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" Multilingual="false"/>
+                <Element name="description" ConceptLink="http://purl.org/dc/terms/description" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" Multilingual="true" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmdi/cues/1"/>
+                <Element name="medium" ConceptLink="http://hdl.handle.net/11459/CCR_C-2458_6d94aa4b-09f5-bd3e-0c00-23a457840463" CardinalityMin="0" CardinalityMax="unbounded">
+                    <ValueScheme>
+                        <Vocabulary>
+                            <enumeration>
+                                <item ConceptLink="" AppInfo="">server</item>
+                                <item ConceptLink="" AppInfo="">cdrom</item>
+                                <item ConceptLink="" AppInfo="">memorystick</item>
+                                <item ConceptLink="" AppInfo="">harddisc</item>
+                                <item ConceptLink="" AppInfo="">dvd</item>
+                                <item ConceptLink="" AppInfo="">diskette</item>
+                                <item ConceptLink="" AppInfo="">hi8</item>
+                            </enumeration>
+                        </Vocabulary>
+                    </ValueScheme>
+                </Element>
+                <Element name="oldBoxNumber" ConceptLink="http://hdl.handle.net/11459/CCR_C_9eb975d2-a4a4-fdfb-57a8-a3cf9af9bdbe" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Multilingual="false"/>
+                <Component name="TechnicalMetadata" ConceptLink="http://hdl.handle.net/11459/CCR_C_4362eadb-3bc1-de33-cb11-47de192dd163" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="digital" ConceptLink="http://hdl.handle.net/11459/CCR_C_8a26a21a-71c9-b5d9-badd-a2de7363e60f" ValueScheme="boolean" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmdi/cues/1"/>
+                    <Component name="Size" ConceptLink="http://hdl.handle.net/11459/CCR_C_d6993b58-e66f-34a1-73aa-2d02cad42e85" CardinalityMin="0" CardinalityMax="1">
+                        <Element name="number" ConceptLink="http://hdl.handle.net/11459/CCR_C-6177_8e40366a-172a-9f6a-cc6a-fcb982209d53" ValueScheme="decimal" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmdi/cues/1"/>
+                        <Element name="unit" ConceptLink="http://hdl.handle.net/11459/CCR_C-2583_5f5cb491-1037-8d46-d685-ccebfc0233f7" CardinalityMin="1" CardinalityMax="1">
+                            <ValueScheme>
+                                <Vocabulary>
+                                    <enumeration>
+                                        <item ConceptLink="" AppInfo="kilobyte">KB</item>
+                                        <item ConceptLink="" AppInfo="megabyte">MB</item>
+                                        <item ConceptLink="" AppInfo="gigabyte">GB</item>
+                                        <item ConceptLink="" AppInfo="terabyte">TB</item>
+                                    </enumeration>
+                                </Vocabulary>
+                            </ValueScheme>
+                        </Element>
+                    </Component>
+                </Component>
+            </Component>
+        </Component>
+        <Component name="AudioFile" CardinalityMin="1" CardinalityMax="unbounded">
+            <Component name="CoreResourceInformation" ComponentRef="clarin.eu:cr1:c_1454489235462" CardinalityMin="1" CardinalityMax="1">
+                <Element name="inventoryId" ConceptLink="http://hdl.handle.net/11459/CCR_C_2667a52a-6d6c-8a8f-a079-b97ba9c20284" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" Multilingual="false"/>
+                <Element name="description" ConceptLink="http://purl.org/dc/terms/description" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" Multilingual="true" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmdi/cues/1"/>
+                <Element name="medium" ConceptLink="http://hdl.handle.net/11459/CCR_C-2458_6d94aa4b-09f5-bd3e-0c00-23a457840463" CardinalityMin="0" CardinalityMax="unbounded">
+                    <ValueScheme>
+                        <Vocabulary>
+                            <enumeration>
+                                <item ConceptLink="" AppInfo="">server</item>
+                                <item ConceptLink="" AppInfo="">cdrom</item>
+                                <item ConceptLink="" AppInfo="">memorystick</item>
+                                <item ConceptLink="" AppInfo="">harddisc</item>
+                                <item ConceptLink="" AppInfo="">dvd</item>
+                                <item ConceptLink="" AppInfo="">diskette</item>
+                                <item ConceptLink="" AppInfo="">hi8</item>
+                            </enumeration>
+                        </Vocabulary>
+                    </ValueScheme>
+                </Element>
+                <Element name="oldBoxNumber" ConceptLink="http://hdl.handle.net/11459/CCR_C_9eb975d2-a4a4-fdfb-57a8-a3cf9af9bdbe" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Multilingual="false"/>
+                <Component name="TechnicalMetadata" ConceptLink="http://hdl.handle.net/11459/CCR_C_4362eadb-3bc1-de33-cb11-47de192dd163" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="digital" ConceptLink="http://hdl.handle.net/11459/CCR_C_8a26a21a-71c9-b5d9-badd-a2de7363e60f" ValueScheme="boolean" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmdi/cues/1"/>
+                    <Component name="Size" ConceptLink="http://hdl.handle.net/11459/CCR_C_d6993b58-e66f-34a1-73aa-2d02cad42e85" CardinalityMin="0" CardinalityMax="1">
+                        <Element name="number" ConceptLink="http://hdl.handle.net/11459/CCR_C-6177_8e40366a-172a-9f6a-cc6a-fcb982209d53" ValueScheme="decimal" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmdi/cues/1"/>
+                        <Element name="unit" ConceptLink="http://hdl.handle.net/11459/CCR_C-2583_5f5cb491-1037-8d46-d685-ccebfc0233f7" CardinalityMin="1" CardinalityMax="1">
+                            <ValueScheme>
+                                <Vocabulary>
+                                    <enumeration>
+                                        <item ConceptLink="" AppInfo="kilobyte">KB</item>
+                                        <item ConceptLink="" AppInfo="megabyte">MB</item>
+                                        <item ConceptLink="" AppInfo="gigabyte">GB</item>
+                                        <item ConceptLink="" AppInfo="terabyte">TB</item>
+                                    </enumeration>
+                                </Vocabulary>
+                            </ValueScheme>
+                        </Element>
+                    </Component>
+                </Component>
+            </Component>
+        </Component>
+        <Component name="Speaker" CardinalityMin="0" CardinalityMax="unbounded">
+            <Element name="id" ConceptLink="http://hdl.handle.net/11459/CCR_C-3894_4d08cc31-25fe-af0c-add4-ca7bdc12f5f7" ValueScheme="int" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmdi/cues/1"/>
+            <Element name="nameCode" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
+            <Element name="city" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
+            <Element name="ageGroup" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
+            <Element name="languageBackground" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
+        </Component>
+    </Component>
+</ComponentSpec>
