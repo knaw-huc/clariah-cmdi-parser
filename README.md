@@ -8,7 +8,7 @@
 5. [Configuration](#conf)
 
 ## <a name="intro"></a>Introduction
-The CLARIAH CMDI Parser is one of two components (the other one is the [HUC Generic Editor](https://github.com/knaw-huc/huc-generic-editor)) for adding a CMDI editor to your own website. 
+The CLARIAH CMDI Parser is one of two components (the other one is the [HUC Generic Editor](https://github.com/knaw-huc/huc-generic-editor)) for addingg a CMDI editor to your own website. 
 
 For more information about the concept of the CLARIAH CMDI Editor, see [Tweak Your CMDI Forms to the Max (2018)](https://office.clarin.eu/v/CE-2018-1292-CLARIN2018_ConferenceProceedings.pdf#page=102) 
 
@@ -21,7 +21,68 @@ In addition to the data reading and writing functions of these PHP classes, ther
 For testing purposes it is possible to download a host application, CLARIAH CMDI Forms, in which the CLARIAH CMDI Parser and the HUC Generic Editor are integrated. For this application, see https://github.com/knaw-huc/clariah-cmdi-forms
 
 ## <a name="prof"></a>CMDI profiles and tweaks
-To be done
+The structure of a class of CMDI metadata records is defined in a corresponding CMDI Profile (for more detailed information about CMDI, see [Component Metadata](https://www.clarin.eu/content/component-metadata)).
+
+The CLARIAH CMDI Forms editor (CCFeditor) is capable to generate a form for CMDI metadata records based on any CMDI profile. In fact, it uses the profile as a set of definitions for creating a specific metadata form. In addition a tweak file with the same XML structure can be used to enhance the usability of the form, as mentioned in the previous paragraph.
+
+The next example consists of a fragment of a CMDI profile, followed by a theak file for the same profile. The tweak consists of the same fragment, but with Dutch labels and an autovalue definition..
+
+### Example 1: profile fragment
+
+```xml
+<Element name="provenance" ConceptLink="http://purl.org/dc/terms/provenance" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+ <Element name="shortTitle" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" Multilingual="true"/>
+            <Element name="storageLocation" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Multilingual="true"/>
+            <Element name="web" ValueScheme="boolean" CardinalityMin="0" CardinalityMax="1"/>
+            <Element name="category" ConceptLink="http://hdl.handle.net/11459/CCR_C-3646_60ef52ab-b400-cb07-7cc2-bda80ec72001 " CardinalityMin="0" CardinalityMax="1">
+                <ValueScheme>
+                    <Vocabulary>
+                        <enumeration>
+                            <item ConceptLink="" AppInfo="">MI General</item>
+                            <item ConceptLink="" AppInfo="">Dialectology/language variation</item>
+                            <item ConceptLink="" AppInfo="">Ethnology</item>
+                            <item ConceptLink="" AppInfo="">Ethnology: Dutch song</item>
+                            <item ConceptLink="" AppInfo="">Onomastics</item>
+                            <item ConceptLink="" AppInfo="">Library</item>
+                            <item ConceptLink="" AppInfo="">Realia</item>
+                        </enumeration>
+                    </Vocabulary>
+                </ValueScheme>
+            </Element>
+```
+
+### Example 1: tweak file fragment
+
+```xml
+<Element name="provenance" cue:hide="yes" xmlns:cue="http://www.clarin.eu/cmdi/cues/1">
+                <clariah:label xml:lang="nl">Herkomst</clariah:label>
+                <AutoValue>default:Meertens Instituut</AutoValue>
+            </Element>
+            <Element name="shortTitle">
+                <clariah:label xml:lang="nl">Titel kort</clariah:label>
+            </Element>
+            <Element name="storageLocation">
+                <clariah:label xml:lang="nl">Opslaglocatie</clariah:label>
+            </Element>
+            <Element name="category">
+                <clariah:label xml:lang="nl">Categorie</clariah:label>
+                <ValueScheme>
+                    <Vocabulary>
+                        <enumeration>
+                            <item><clariah:label xml:lang="nl">MI Algemeen</clariah:label><clariah:value>MI General</clariah:value></item>
+                            <item><clariah:label xml:lang="nl">Dialectologie/taalvariatie</clariah:label><clariah:value>Dialectology/language variation</clariah:value></item>
+                            <item><clariah:label xml:lang="nl">Etnologie</clariah:label><clariah:value>Ethnology</clariah:value></item>
+                            <item><clariah:label xml:lang="nl">Etnologie: Lied</clariah:label><clariah:value>Ethnology: Dutch song</clariah:value></item>
+                            <item><clariah:label xml:lang="nl">Naamkunde</clariah:label><clariah:value>Onomastics</clariah:value></item>
+                            <item><clariah:label xml:lang="nl">Bibliotheek</clariah:label><clariah:value>Library</clariah:value></item>
+                            <item>Realia</item>
+                        </enumeration>
+                    </Vocabulary>
+                </ValueScheme>
+            </Element>
+```
+
+
 
 ## <a name="class"></a>Classes
 To be done
