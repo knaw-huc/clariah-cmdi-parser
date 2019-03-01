@@ -8,7 +8,7 @@
 5. [Configuration](#conf)
 
 ## <a name="intro"></a>Introduction
-The CLARIAH CMDI Parser is one of two components (the other one is the [HUC Generic Editor](https://github.com/knaw-huc/huc-generic-editor)) for addingg a CMDI editor to your own website. 
+The CLARIAH CMDI Parser is one of two components (the other one is the [HUC Generic Editor](https://github.com/knaw-huc/huc-generic-editor)) for adding a CMDI editor to your own website. 
 
 For more information about the concept of the CLARIAH CMDI Editor, see [Tweak Your CMDI Forms to the Max (2018)](https://office.clarin.eu/v/CE-2018-1292-CLARIN2018_ConferenceProceedings.pdf#page=102) 
 
