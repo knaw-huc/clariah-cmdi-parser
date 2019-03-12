@@ -5,7 +5,6 @@
 2. [CMDI profiles and tweaks](#prof) 
 3. [Classes](#class)
 4. [Tweaker](#tweak)
-5. [Configuration](#conf)
 
 ## <a name="intro"></a>Introduction
 The CLARIAH CMDI Parser is one of two components (the other one is the [HUC Generic Editor](https://github.com/knaw-huc/huc-generic-editor)) for adding a CMDI editor to your own website. 
