@@ -85,10 +85,94 @@ The next example consists of a fragment of a CMDI profile, followed by a theak f
 
 
 ## <a name="class"></a>Classes
-To be done
+The two classes of the CLARIAH CMDI Parser are:
+1. CcfParser class (CcfParser.class.php)
+2. CcfRecord class (CcfRecord.class.php)
+
+In short, the first class parses a CMDI profile and optional metadata record and/or tweak file, to create a JSON structure for the Generic Editor. The second class builds a new CMDI record from new or edited data.
+
+The __CcfParser class__ can be invoked in PHP code as follows:
+
+```php
+$parser = new Ccfparser();
+```
+This class contains one method: ```parseTweak()```. The syntax is 
+
+```
+parseTweak(string  <cmdi_profile_name>, string <tweak_file_name>, string <tweaker_file_name>, string <cmdi_record_name>) : string <JSON structure>;
+```
+
+__Parameters:__
+
+*<cmdi_profile_name>* : Path and filename of a CMDI Profile file.
+
+*<tweak_file_name>* : Path and file name of the tweak file (see previous paragraph). 
+
+*<tweaker_file_name>* : Path and file name of the tweaker file, a xslt stylesheet for merging the CMDI profile and the tweak into one XML file. This XML file contains the field and component definition for the editor. Both CMDI 1.1. and 1.2 are supported.
+
+*<cmdi_record_name>* : Path and file name of the CMDI record, in case of editing an existing record.
+
+__Examples:__
+
+Create new record, without tweaks.
+```php
+$parser = new Ccfparser();
+$json_struc = $parser->parseTweak($cmdi_profile, null, null, null);
+```
+
+Edit record, without tweaks.
+```php
+$parser = new Ccfparser();
+$json_struc = $parser->parseTweak($cmdi_profile, null, null, $cmdi_record);
+```
+
+Edit record, with tweaks.
+```php
+$parser = new Ccfparser();
+$json_struc = $parser->parseTweak($cmdi_profile, $tweak_file, $tweaker, $cmdi_record);
+```
+
+
+The __CcfRecord class__ is used to (re)create a CMDI record file, based on the JSON structure from the editor, containing the edited data. This class can be invoked by:
+
+```php
+$record = new Ccfrecord();
+```
+
+This class also contains only one method:
+
+```
+createComponents(string <input_components>, string <profile_ID>, XML <cmdi_record>, string <resource_path>, string <upload_path>) : XML <cmdiRecord>;
+```
+
+__Parameters:__
+
+*<input_components>* : JSON string from editor, contaning CMDI record data.
+
+*<profile_ID>* : ID of the CMDI profile. Is extracted form the CMDI profile.
+
+*<cmdi_record>* : Path and file name of CMDI record. In case of editing an existing record the file of the record in question is used. For new records a minimal record template is used.
+
+*<resource_path>* : Destination path for uploaded resources that belong to the CMDI record.
+
+*<upload_path>* : Location on the server where the resources are stored afer the upload process.
+
+__Examples__
+
+Edit with uploading resources:
+
+```php
+$record = new Ccfrecord();
+$record->createComponents($json_from_editor, $profile_id, $cmdi_record, $resource_path, UPLOAD_PATH);
+```
+
+Edit without resources:
+
+```php
+$record = new Ccfrecord();
+$record->createComponents($json_from_editor, $profile_id, $cmdi_record, null, null);
+```
+
 
 ## <a name="tweak"></a>Tweaker
-To be done
-
-## <a name="conf"></a>Configuration
-To be done
+The tweaker  ```tweaker/mergeTweak.xsl``` is used by CcfParser class. If nullifiedd in the method call ```Ccfparser()->parseTweak()``` the editor will be build on basis of the raw CMDI profile, without tweaks.
