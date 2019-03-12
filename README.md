@@ -174,4 +174,4 @@ $record->createComponents($json_from_editor, $profile_id, $cmdi_record, null, nu
 
 
 ## <a name="tweak"></a>Tweaker
-The tweaker  ```tweaker/mergeTweak.xsl``` is used by CcfParser class. If nullifiedd in the method call ```Ccfparser()->parseTweak()``` the editor will be build on basis of the raw CMDI profile, without tweaks.
+The tweaker  ```tweaker/mergeTweak.xsl``` is used by CcfParser class. If nullified in the method call ```Ccfparser()->parseTweak()``` the editor will be build on basis of the raw CMDI profile, without tweaks.
