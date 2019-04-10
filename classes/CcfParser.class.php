@@ -297,6 +297,10 @@ class Ccfparser {
                     $retArray["resource"] = $child->nodeValue;
                 case 'ValueScheme':
                     $retArray["ValueScheme"] = $this->_implementValueScheme($child);
+                    if (array_key_exists("pattern", $retArray["ValueScheme"])) {
+                        $retArray["pattern"] = $retArray["ValueScheme"]["pattern"];
+                        $retArray["ValueScheme"] = "string";
+                    }
                     break;
 //                case 'clariah:displayOrder':
 //                    $retArray["displayOrder"] = $child->nodeValue;
@@ -353,7 +357,8 @@ class Ccfparser {
         foreach ($xml->childNodes as $node) {
             switch ($node->nodeName) {
                 case 'pattern':
-                    $retArray[] = array($node->nodeName => $node->nodeValue);
+                    //return "string";
+                    return array($node->nodeName => $node->nodeValue);
                     break;
                 case 'Vocabulary':
                     $retArray[] = $this->_enumerateVocabulary($node);
