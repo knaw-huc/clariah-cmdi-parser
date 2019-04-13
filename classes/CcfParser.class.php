@@ -295,6 +295,10 @@ class Ccfparser {
 //                    break;
                 case 'clariah:resource':
                     $retArray["resource"] = $child->nodeValue;
+                    break;
+                case 'AttributeList':
+                    $retArray["attributeList"] = $this->_createAttributeList($child);
+                    break;
                 case 'ValueScheme':
                     $retArray["ValueScheme"] = $this->_implementValueScheme($child);
                     if (array_key_exists("pattern", $retArray["ValueScheme"])) {
@@ -317,6 +321,22 @@ class Ccfparser {
             if (isset($retArray["width"])) {
                 $retArray["inputField"] = 'single';
             }
+        }
+        return $retArray;
+    }
+    
+    private function _createAttributeList($node){
+        $retArray = array();
+        foreach ($node->childNodes as $child){
+           $retArray[] = $this->_addAttributesForList($child);
+        }
+        return $retArray;
+    }
+    
+    private function _addAttributesForList($node) {
+        $retArray = array();
+        foreach($node->attributes as $attribute) {
+            $retArray[$attribute->nodeName] = $attribute->nodeValue;
         }
         return $retArray;
     }
