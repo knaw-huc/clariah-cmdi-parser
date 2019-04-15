@@ -194,14 +194,6 @@ class Ccfparser {
     private function _getValueAttributes($valueNode, $res) {
         $retArray = array();
         foreach ($valueNode->attributes as $attribute) {
-//            if ($attribute->nodeName == 'ref')
-//            {
-//                $index = $attribute->textContent;
-//                print_r($res);
-//                $retArray["file"] = $res[$index];
-//                print_r($retArray);
-//                die($index);
-//            }
             $retArray[$attribute->nodeName] = $attribute->nodeValue;
         }
         if (count($retArray)) {
