@@ -242,10 +242,13 @@ class Ccfparser {
                     break;
                 case 'CardinalityMax':
                     $retArray[$attribute->nodeName] = $attribute->nodeValue;
+                    if ($attribute->nodeValue === "unbounded") {
+                        $retArray["duplicate"] = 'yes';
+                    }
                     break;
                 case 'Multilingual':
                     $retArray[$attribute->nodeName] = $attribute->nodeValue;
-                    if ($attribute->nodeValue) {
+                    if ($attribute->nodeValue === "true") {
                         $retArray["duplicate"] = 'yes';
                     }
                     break;
