@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xsl:stylesheet
     xmlns:clariah="http://www.clariah.eu/" 
-    xmlns:cue="http://www.clarin.eu/cmdi/cues/1"
+    xmlns:cue="http://www.clarin.eu/cmd/cues/1"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform" version="1.0">
     
