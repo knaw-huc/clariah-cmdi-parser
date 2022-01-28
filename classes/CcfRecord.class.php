@@ -9,7 +9,7 @@ class Ccfrecord {
 
     function createComponents($inputComponents, $profileID, $cmdiRecord, $resourcePath, $uploadPath) {
         $date = date("Y-m-d");
-        $headerItems = $cmdiRecord->getElementsByTagNameNS('http://www.clarin.eu/cmd/', 'Header')->item(0);
+        $headerItems = $cmdiRecord->getElementsByTagNameNS('http://www.clarin.eu/cmd/1', 'Header')->item(0);
 
         foreach ($headerItems->childNodes as $item) {
             switch ($item->tagName) {
@@ -21,7 +21,7 @@ class Ccfrecord {
                     break;
             }
         }
-        $nodes = $cmdiRecord->getElementsByTagNameNS('http://www.clarin.eu/cmd/', 'Components');
+        $nodes = $cmdiRecord->getElementsByTagNameNS('http://www.clarin.eu/cmd/1', 'Components');
         $node = $nodes->item(0);
         $this->processChildren($inputComponents, $node, $cmdiRecord);
         if (!is_null($resourcePath) && !is_null($uploadPath)) {
@@ -80,7 +80,7 @@ class Ccfrecord {
     }
 
     private function processResources($cmdi, $resourcePath, $uploadPath) {
-        $nodes = $cmdi->getElementsByTagNameNS('http://www.clarin.eu/cmd/', 'Resources');
+        $nodes = $cmdi->getElementsByTagNameNS('http://www.clarin.eu/cmd/1', 'Resources');
         $node = $nodes->item(0);
         $newNode = $cmdi->createElement('cmd:ResourceProxyList', NULL);
         for ($i = 0; $i < count($this->resources); $i++) {
