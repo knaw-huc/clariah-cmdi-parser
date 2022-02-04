@@ -1,8 +1,8 @@
 <?php
 define('PROFILE_PATH', dirname(__FILE__) . '/data/profiles/');
-define('RECORD_DIR',dirname(__FILE__) . '/data/records/');
+define('RECORD_DIR',dirname(__FILE__) . '/data/records/inprogress/');
 define('TWEAK_DIR', dirname(__FILE__) . '/data/tweaks/');
-define('TWEAKER', dirname(__FILE__) . '/data/tweaker/mergeTweak.xsl');
+define('TWEAKER', dirname(__FILE__) . '/tweaker/mergeTweak.xsl');
 define('BASE_URL', "Go for it.");
 
 require(dirname(__FILE__) . '/classes/CcfParser.class.php');
