@@ -312,7 +312,7 @@
                     </xsl:choose>
                 </xsl:variable>
                 <xsl:choose>
-                    <xsl:when test="(number($min) &lt;= number($myTweak)) and ((normalize-space($max)='unbounded') or (number($myTweak) &lt;= number($max)))">
+                    <xsl:when test="(number($min) &lt;= number($myTweak)) or ((normalize-space($max)='unbounded') or (number($myTweak) &lt;= number($max)))">
                         <xsl:attribute name="CardinalityMax">
                             <xsl:value-of select="number($myTweak)"/>
                         </xsl:attribute>
