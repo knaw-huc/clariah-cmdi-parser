@@ -118,12 +118,22 @@ class Ccfparser {
         return $retArray;
     }
 
+    private function _hasChild($p) {
+        if ($p->hasChildNodes()) {
+          foreach ($p->childNodes as $c) {
+           if ($c->nodeType == XML_ELEMENT_NODE)
+            return true;
+          }
+        }
+        return false;
+    }
+
     private function _parseRecord($xml, $resources) {
         $retArray = array();
         foreach ($xml->childNodes as $node) {
-            $name = substr($node->nodeName, 4);
+            $name = $node->localName;
             if ($node->hasChildNodes()) {
-                if ($node->firstChild->nodeType == 3) {
+                if (!$this->_hasChild($node)) {
                     $attributes = $this->_getValueAttributes($node, $resources);
                     if ($attributes) {
                         $retArray[] = array("name" => $name, "type" => "element", "value" => $node->nodeValue, "attributes" => $attributes);
