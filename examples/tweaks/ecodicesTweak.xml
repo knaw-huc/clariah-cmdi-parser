@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ComponentSpec isProfile="true" CMDVersion="1.2" CMDOriginalVersion="1.2" xsi:noNamespaceSchemaLocation="https://infra.clarin.eu/CMDI/1.x/xsd/cmd-component.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Header>
+        <ID>clarin.eu:cr1:p_1659015263818</ID>
+        <Name>eCodices</Name>
+        <Description>eCodices MMDC TEI header</Description>
+        <Status>development</Status>
+    </Header>
+    <Component name="eCodices">
+        <clariah:label xml:lang="nl">eCodicesNL</clariah:label>
+        <Element name="creator">
+            <clariah:label xml:lang="nl">Naam invoerder</clariah:label>
+        </Element>
+        <Component name="Title">
+            <clariah:label xml:lang="nl">Title Statement</clariah:label>
+            <Element name="mmdc_title" ValueScheme="string" cue:DisplayPriority="1"
+                xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                <clariah:label xml:lang="nl">mmdc_title statement</clariah:label>
+            </Element>
+            <Element name="title" ValueScheme="string" Multilingual="true">
+                <clariah:label xml:lang="nl">Title</clariah:label>
+            </Element>
+        </Component>
+        <Component name="Publication">
+            <Component name="Availability">
+                <Element name="status">
+                    <ValueScheme>
+                        <Vocabulary>
+                            <enumeration>
+                                <item>free</item>
+                                <item>unknown</item>
+                                <item>restricted</item>
+                            </enumeration>
+                        </Vocabulary>
+                    </ValueScheme>
+                </Element>
+                <Element name="licence" ValueScheme="string" cue:DisplayPriority="1"
+                    xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                    <AutoValue>CC-BY-4.0</AutoValue>
+                </Element>
+                <Element name="licenceTarget" ValueScheme="anyURI">
+                    <AutoValue>https://creativecommons.org/licences/by/4.0/</AutoValue>
+                </Element>
+            </Component>
+        </Component>
+        <Component name="Source">
+            <Component name="Id">
+                <Element name="mmdc_id" ValueScheme="string"/>
+                <Element name="id" ValueScheme="string" cue:DisplayPriority="1"
+                    xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+            </Component>
+            <Component name="Identifier">
+                <Element name="Name" ValueScheme="string"
+                    xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                <Component name="Settlement">
+                    <Element name="mmdc_settlement" ValueScheme="string" cue:DisplayPriority="1"
+                        xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="settlement" ValueScheme="string"/>
+                </Component>
+                <Component name="Repository">
+                    <Element name="mmdc_repository" ValueScheme="string" cue:DisplayPriority="1"
+                        xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="repository" ValueScheme="string"/>
+                </Component>
+                <Component name="Idno">
+                    <Element name="mmdc_idno" ValueScheme="string"/>
+                    <Element name="idno" ValueScheme="string" cue:DisplayPriority="1"
+                        xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                </Component>
+                <Component name="AltIdentifier">
+                    <Component name="Idno">
+                        <clariah:label xml:lang="nl">Former shelfmark</clariah:label>
+                        <Element name="mmdc_idno" ValueScheme="string"/>
+                        <Element name="idno" ValueScheme="string" cue:DisplayPriority="1"
+                            xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    </Component>
+                </Component>
+            </Component>
+            <Component name="Head">
+                <Element name="title" ValueScheme="string" cue:DisplayPriority="1"
+                    xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                    <clariah:label>Title</clariah:label>
+                </Element>
+                <Component name="OrigPlace">
+                    <Element name="mmdc_origPlace" ValueScheme="string"/>
+                    <Element name="origPlace" ValueScheme="string" cue:DisplayPriority="1"
+                        xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="note" cue:inputHeight="8" cue:inputWidth="60"
+                        xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                        <clariah:label>Note</clariah:label>
+                    </Element>
+                </Component>
+                <Component name="OrigDate">
+                    <Element name="mmdc_origDate" ValueScheme="string"/>
+                    <Element name="origDate" ValueScheme="string" cue:DisplayPriority="1"
+                        xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="notBefore" ValueScheme="string"/>
+                    <Element name="notAfter" ValueScheme="string"/>
+                    <Element name="note" cue:inputHeight="8" cue:inputWidth="60"
+                        xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                        <clariah:label>Note</clariah:label>
+                    </Element>
+                </Component>
+            </Component>
+            <Component name="Contents">
+                <Component name="Summary">
+                    <Element name="mmdc_summary" ValueScheme="string"/>
+                    <Element name="summary" ValueScheme="string" cue:DisplayPriority="1"
+                        cue:inputHeight="8" cue:inputWidth="60"
+                        xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                        <clariah:label xml:lang="nl">Summary</clariah:label>
+                    </Element>
+                </Component>
+                <Component name="textLang">
+                    <Element name="mmdc_textLang" ValueScheme="string"/>
+                    <Element name="textLang" cue:DisplayPriority="1"
+                        xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                        <ValueScheme>
+                            <Vocabulary>
+                                <enumeration>
+                                    <item ConceptLink="" AppInfo="Arabic">ara</item>
+                                    <item ConceptLink="" AppInfo="English">eng</item>
+                                    <item ConceptLink="" AppInfo="French">fra</item>
+                                    <item ConceptLink="" AppInfo="Western Frisian">fry</item>
+                                    <item ConceptLink="" AppInfo="Gaelic">gla</item>
+                                    <item ConceptLink="" AppInfo="German">deu</item>
+                                    <item ConceptLink="" AppInfo="Ancient Greek">grc</item>
+                                    <item ConceptLink="" AppInfo="Hebrew">heb</item>
+                                    <item ConceptLink="" AppInfo="Icelandic">isl</item>
+                                    <item ConceptLink="" AppInfo="Irish">gle</item>
+                                    <item ConceptLink="" AppInfo="Italian">ita</item>
+                                    <item ConceptLink="" AppInfo="Latin">lat</item>
+                                    <item ConceptLink="" AppInfo="Yiddish">yid</item>
+                                    <item ConceptLink="" AppInfo="Middle Low German">gml</item>
+                                    <item ConceptLink="" AppInfo="Uncoded languages">mis</item>
+                                    <item ConceptLink="" AppInfo="Dutch">nld</item>
+                                    <item ConceptLink="" AppInfo="Occitan (post 1500)">oci</item>
+                                    <item ConceptLink="" AppInfo="Old Occitan (to 1500) Old Provençal (to 1500)">pro</item>
+                                    <item ConceptLink="" AppInfo="Spanish">spa</item>
+                                    <item ConceptLink="" AppInfo="Undetermined">und</item>
+                                </enumeration>
+                            </Vocabulary>
+                        </ValueScheme>
+                    </Element>
+                    <Element name="otherLang">
+                        <ValueScheme>
+                            <Vocabulary>
+                                <enumeration>
+                                    <item ConceptLink="" AppInfo="Arabic">ara</item>
+                                    <item ConceptLink="" AppInfo="English">eng</item>
+                                    <item ConceptLink="" AppInfo="French">fra</item>
+                                    <item ConceptLink="" AppInfo="Western Frisian">fry</item>
+                                    <item ConceptLink="" AppInfo="Gaelic">gla</item>
+                                    <item ConceptLink="" AppInfo="German">deu</item>
+                                    <item ConceptLink="" AppInfo="Ancient Greek">grc</item>
+                                    <item ConceptLink="" AppInfo="Hebrew">heb</item>
+                                    <item ConceptLink="" AppInfo="Icelandic">isl</item>
+                                    <item ConceptLink="" AppInfo="Irish">gle</item>
+                                    <item ConceptLink="" AppInfo="Italian">ita</item>
+                                    <item ConceptLink="" AppInfo="Latin">lat</item>
+                                    <item ConceptLink="" AppInfo="Yiddish">yid</item>
+                                    <item ConceptLink="" AppInfo="Middle Low German">gml</item>
+                                    <item ConceptLink="" AppInfo="Uncoded languages">mis</item>
+                                    <item ConceptLink="" AppInfo="Dutch">nld</item>
+                                    <item ConceptLink="" AppInfo="Occitan (post 1500)">oci</item>
+                                    <item ConceptLink="" AppInfo="Old Occitan (to 1500) Old Provençal (to 1500)">pro</item>
+                                    <item ConceptLink="" AppInfo="Spanish">spa</item>
+                                    <item ConceptLink="" AppInfo="Undetermined">und</item>
+                                </enumeration>
+                            </Vocabulary>
+                        </ValueScheme>
+                    </Element>
+                    <Element name="note" ValueScheme="string" cue:inputHeight="8"
+                        cue:inputWidth="60" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Component name="MainLang">
+                        <Element name="mainLang" cue:hide="yes"
+                            xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    </Component>
+                </Component>
+                <Component name="Item">
+                    <Element name="AltTitle" ValueScheme="string" cue:DisplayPriority="1"
+                        xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="rubric" ValueScheme="string" Multilingual="true"
+                        cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="finalRubric" ValueScheme="string" Multilingual="true"
+                        cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="colophon" ValueScheme="string" Multilingual="true"
+                        cue:inputHeight="8" cue:inputWidth="60" cue:DisplayPriority="1"
+                        xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="itemOrder">
+                        <AutoValue>1</AutoValue>
+                    </Element>
+                    <Component name="Locus" cue:DisplayPriority="10"
+                        xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                        <Element name="mmdc_locus" ValueScheme="string"/>
+                        <Element name="locus" ValueScheme="string" cue:DisplayPriority="1"
+                            xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                        <Component name="From">
+                            <Element name="mmdc_from" ValueScheme="string"/>
+                            <Element name="from" ValueScheme="string" cue:DisplayPriority="1"
+                                xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                        </Component>
+                        <Component name="To">
+                            <Element name="mmdc_to" ValueScheme="string"/>
+                            <Element name="to" ValueScheme="string" cue:DisplayPriority="1"
+                                xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                        </Component>
+                    </Component>
+                    <Component name="Author">
+                        <Element name="ref" ValueScheme="anyURI"/>
+                        <Element name="mmdc_author" ValueScheme="string"/>
+                        <Element name="author" ValueScheme="string" cue:DisplayPriority="1"
+                            xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    </Component>
+                    <Component name="Title">
+                        <Element name="mmdc_title" ValueScheme="string"/>
+                        <Element name="title" ValueScheme="string" cue:DisplayPriority="1"
+                            xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    </Component>
+                    <Component name="Filiation">
+                        <Element name="mmdc_filiation" ValueScheme="string"/>
+                        <Element name="filiation" ValueScheme="string" cue:DisplayPriority="1"
+                            xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    </Component>
+                    <Component name="Note">
+                        <Element name="mmdc_note" ValueScheme="string"/>
+                        <Element name="note" ValueScheme="string" cue:DisplayPriority="1"
+                            cue:inputHeight="8" cue:inputWidth="60"
+                            xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                            <clariah:label>Note</clariah:label>
+                        </Element>
+                    </Component>
+                    <Component name="Implicit">
+                        <clariah:label>Incipit</clariah:label>
+                        <Element name="mmdc_implicit" ValueScheme="string">
+                            <clariah:label>mmdc_incipit</clariah:label>
+                        </Element>
+                        <Element name="implicit" ValueScheme="string" cue:DisplayPriority="1"
+                            xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                            <clariah:label>Incipit</clariah:label>
+                        </Element>
+                        <Component name="Locus" ComponentRef="clarin.eu:cr1:c_1633000337996">
+                            <Element name="locus" ValueScheme="string" cue:DisplayPriority="1"
+                                xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                            <Element name="from" ValueScheme="string"/>
+                            <Element name="to" ValueScheme="string"/>
+                        </Component>
+                    </Component>
+                    <Component name="Explicit">
+                        <Element name="mmdc_explicit" ValueScheme="string"/>
+                        <Element name="explicit" ValueScheme="string" cue:DisplayPriority="1"
+                            xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                            <clariah:label>Explicit</clariah:label>
+                        </Element>
+                        <Component name="Locus" ComponentRef="clarin.eu:cr1:c_1633000337996">
+                            <Element name="locus" ValueScheme="string" cue:DisplayPriority="1"
+                                xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                            <Element name="from" ValueScheme="string"/>
+                            <Element name="to" ValueScheme="string"/>
+                        </Component>
+                    </Component>
+                    <Component name="TextLang">
+                        <Element name="mainLang" ValueScheme="string"/>
+                        <Element name="textLang" ValueScheme="string" cue:DisplayPriority="1"
+                            xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    </Component>
+                </Component>
+            </Component>
+            <Component name="PhysDesc">
+                <Element name="additions" ValueScheme="string" cue:DisplayPriority="1"
+                    xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                <Element name="accMat" ValueScheme="string"/>
+                <Element name="musicNotation" ValueScheme="string"/>
+                <Component name="ObjectDesc">
+                    <Element name="form" cue:DisplayPriority="1"
+                        xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                        <ValueScheme>
+                            <Vocabulary>
+                                <enumeration>
+                                    <item>codex</item>
+                                    <item>scroll</item>
+                                    <item>leaf</item>
+                                    <item>codicological_unit</item>
+                                    <item>fragment</item>
+                                    <item>other</item>
+                                    <item>unknown</item>
+                                </enumeration>
+                            </Vocabulary>
+                        </ValueScheme>
+                    </Element>
+                    <Component name="SupportDesc">
+                        <Element name="condition" ValueScheme="string" cue:DisplayPriority="1"
+                            xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                        <Element name="foliation" ValueScheme="string"/>
+                        <Component name="Material">
+                            <Element name="mmdc_material" ValueScheme="string"/>
+                            <Element name="material" cue:DisplayPriority="1"
+                                xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                                <ValueScheme>
+                                    <Vocabulary>
+                                        <enumeration>
+                                            <item>perg</item>
+                                            <item>chart</item>
+                                            <item>perg_chart</item>
+                                            <item>papyrus</item>
+                                            <item>wood_wax</item>
+                                            <item>other</item>
+                                            <item>unknown</item>
+                                        </enumeration>
+                                    </Vocabulary>
+                                </ValueScheme>
+                            </Element>
+                        </Component>
+                        <Component name="Support">
+                            <Element name="mmdc_support" ValueScheme="string"/>
+                            <Element name="support" ValueScheme="string" cue:DisplayPriority="1"
+                                xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                        </Component>
+                        <Component name="MeasureLeavesCount" CardinalityMin="1" CardinalityMax="1">
+                            <Element name="type" CardinalityMin="1" CardinalityMax="1">
+                                <ValueScheme>
+                                    <Vocabulary>
+                                        <enumeration>
+                                            <item>leavesCount</item>
+                                            <item>pagesCount</item>
+                                        </enumeration>
+                                    </Vocabulary>
+                                </ValueScheme>
+                            </Element>
+                            <Element name="mmdc_measure" ValueScheme="string"/>
+                            <Element name="measure" ValueScheme="string" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                        </Component>
+                        <Component name="MeasurePageDimensions">
+                            <Element name="type" ValueScheme="string" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                            <Element name="mmdc_measure" ValueScheme="string" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                            <Element name="height" ValueScheme="int" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                            <Element name="width" ValueScheme="int" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                        </Component>
+                        <Component name="Collation">
+                            <Element name="collation" ValueScheme="string" cue:DisplayPriority="1"
+                                xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                            <Component name="Locus" ComponentRef="clarin.eu:cr1:c_1633000337996">
+                                <Element name="locus" ValueScheme="string" cue:DisplayPriority="1"
+                                    xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                                <Element name="from" ValueScheme="string"/>
+                                <Element name="to" ValueScheme="string"/>
+                            </Component>
+                        </Component>
+                    </Component>
+                    <Component name="layoutDesc">
+                        <Component name="Layout">
+                            <Element name="mmdc_layout" ValueScheme="string"/>
+                            <Element name="layout" ValueScheme="string" cue:DisplayPriority="1"
+                                cue:hide="yes" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                            <Component name="Columns">
+                                <Element name="mmdc_columns" ValueScheme="string"/>
+                                <Element name="columns" ValueScheme="string" cue:DisplayPriority="1"
+                                    xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                            </Component>
+                            <Component name="WrittenLines">
+                                <Element name="mmdc_writtenLines" ValueScheme="string"/>
+                                <Element name="writtenLines" ValueScheme="string"
+                                    cue:DisplayPriority="1"
+                                    xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                            </Component>
+                            <Component name="MeasureTextBlock">
+                                <clariah:label>Measure text block</clariah:label>
+                            </Component>
+                        </Component>
+                    </Component>
+                </Component>
+                <Component name="HandDesc">
+                    <Element name="hands" ValueScheme="string" cue:DisplayPriority="1"
+                        xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="summary" ValueScheme="string"/>
+                    <Component name="HandNote">
+                        <Element name="script" CardinalityMin="0" CardinalityMax="1"
+                            cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                            <ValueScheme>
+                                <Vocabulary>
+                                    <enumeration>
+                                        <item>capitalsRustic</item>
+                                        <item>capitalsSquare</item>
+                                        <item>minusculePreCaroline</item>
+                                        <item>uncial</item>
+                                        <item>halfUncial</item>
+                                        <item>minusculeCaroline</item>
+                                        <item>minusculeVisigothic</item>
+                                        <item>minusculeInsular</item>
+                                        <item>minusculeBeneventan</item>
+                                        <item>praegothic</item>
+                                        <item>gothicTextualis</item>
+                                        <item>textualisSouthern</item>
+                                        <item>textualisNorthern</item>
+                                        <item>Hybrid</item>
+                                        <item>Cursiva</item>
+                                        <item>cursivaTypeA</item>
+                                        <item>cursivaTypeC</item>
+                                        <item>cursivaTypeAC</item>
+                                        <item>cursivaTypeAnglicana</item>
+                                        <item>cursivaTypeBourguignonne</item>
+                                        <item>Humanistica</item>
+                                        <item>humanisticaCursiva</item>
+                                        <item>humanisticaTextualis</item>
+                                        <item>other</item>
+                                    </enumeration>
+                                </Vocabulary>
+                            </ValueScheme>
+                        </Element>
+                        <Element name="mmdc_handNote" ValueScheme="string"/>
+                        <Element name="handNote" ValueScheme="string" cue:inputHeight="8"
+                            cue:inputWidth="60" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                        <Component name="Locus" ComponentRef="clarin.eu:cr1:c_1633000337996">
+                            <Element name="locus" ValueScheme="string" cue:DisplayPriority="1"
+                                xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                            <Element name="from" ValueScheme="string"/>
+                            <Element name="to" ValueScheme="string"/>
+                        </Component>
+                    </Component>
+                </Component>
+                <Component name="DecoDesc">
+                    <Component name="DecoNote">
+                        <Element name="mmdc_decoNote" ValueScheme="string"/>
+                        <Element name="decoNote" ValueScheme="string" cue:DisplayPriority="1"
+                            xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                        <Component name="Locus" ComponentRef="clarin.eu:cr1:c_1633000337996">
+                            <Element name="locus" ValueScheme="string" cue:DisplayPriority="1"
+                                xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                            <Element name="from" ValueScheme="string"/>
+                            <Element name="to" ValueScheme="string"/>
+                        </Component>
+                    </Component>
+                </Component>
+                <Component name="bindingDesc">
+                    <Component name="Binding">
+                        <Element name="mmdc_binding" ValueScheme="string"/>
+                        <Element name="binding" ValueScheme="string" cue:DisplayPriority="1"
+                            xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                        <Element name="notBefore" ValueScheme="string"/>
+                        <Element name="notAfter" ValueScheme="string"/>
+                        <Element name="date" ValueScheme="string"/>
+                    </Component>
+                </Component>
+            </Component>
+            <Component name="History">
+                <Component name="Origin">
+                    <Element name="mmdc_origin" ValueScheme="string"/>
+                    <Element name="origin" ValueScheme="string" cue:DisplayPriority="1"
+                        xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                </Component>
+                <Component name="Provenance">
+                    <Element name="mmdc_provenance" ValueScheme="string"/>
+                    <Element name="provenance" ValueScheme="string" cue:DisplayPriority="1"  cue:inputHeight="8" cue:inputWidth="60"
+                        xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                </Component>
+                <Component name="Acquisition">
+                    <Element name="mmdc_acquisition" ValueScheme="string" cue:inputHeight="8"
+                        cue:inputWidth="60" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="acquisition" ValueScheme="string" cue:DisplayPriority="1"
+                        cue:inputHeight="8" cue:inputWidth="60"
+                        xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="date" cue:hide="yes" xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                        <clariah:label xml:lang="en">data (DON'T USE THIS FIELD, WILL BE
+                            REMOVED)</clariah:label>
+                    </Element>
+                    <Component name="PersName">
+                        <Element name="mmdc_persName" ValueScheme="string"/>
+                        <Element name="persName" ValueScheme="string" cue:DisplayPriority="1"
+                            xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    </Component>
+                </Component>
+            </Component>
+        </Component>
+    </Component>
+</ComponentSpec>

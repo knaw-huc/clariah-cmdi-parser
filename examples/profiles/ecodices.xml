@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ComponentSpec isProfile="true" CMDVersion="1.2" CMDOriginalVersion="1.2" xsi:noNamespaceSchemaLocation="https://infra.clarin.eu/CMDI/1.x/xsd/cmd-component.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <Header>
+        <ID>clarin.eu:cr1:p_1659015263818</ID>
+        <Name>eCodices</Name>
+        <Description>eCodices MMDC TEI header</Description>
+        <Status>development</Status>
+        <DerivedFrom>clarin.eu:cr1:p_1633000337993</DerivedFrom>
+    </Header>
+    <Component name="eCodices" CardinalityMin="1" CardinalityMax="1">
+        <Element name="creator" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+        <Component name="Title" CardinalityMin="1" CardinalityMax="1">
+            <Element name="mmdc_title" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+            <Element name="title" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
+        </Component>
+        <Component name="Publication" CardinalityMin="1" CardinalityMax="1">
+            <Element name="publisher" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+            <Component name="Availability" CardinalityMin="1" CardinalityMax="1">
+                <Element name="status" CardinalityMin="1" CardinalityMax="1">
+                    <ValueScheme>
+                        <Vocabulary>
+                            <enumeration>
+                                <item>free</item>
+                                <item>unknown</item>
+                                <item>restricted</item>
+                            </enumeration>
+                        </Vocabulary>
+                    </ValueScheme>
+                </Element>
+                <Element name="licence" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                <Element name="licenceTarget" ValueScheme="anyURI" CardinalityMin="1" CardinalityMax="1"/>
+            </Component>
+        </Component>
+        <Component name="Source" CardinalityMin="1" CardinalityMax="1">
+            <Component name="Id" CardinalityMin="1" CardinalityMax="1">
+                <Element name="mmdc_id" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="id" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+            </Component>
+            <Component name="Identifier" CardinalityMin="1" CardinalityMax="1">
+                <Element name="Name" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                <Component name="Settlement" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="mmdc_settlement" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="settlement" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
+                </Component>
+                <Component name="Repository" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="mmdc_repository" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="repository" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
+                </Component>
+                <Component name="Idno" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="mmdc_idno" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="idno" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                </Component>
+                <Component name="AltIdentifier" CardinalityMin="1" CardinalityMax="1">
+                    <Component name="Idno" CardinalityMin="0" CardinalityMax="unbounded">
+                        <Element name="mmdc_idno" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                        <Element name="idno" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    </Component>
+                </Component>
+            </Component>
+            <Component name="Head" CardinalityMin="1" CardinalityMax="1">
+                <Component name="Title" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="mmdc_title" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="title" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                </Component>
+                <Component name="OrigPlace" CardinalityMin="0" CardinalityMax="unbounded">
+                    <Element name="mmdc_origPlace" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded"/>
+                    <Element name="origPlace" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="note" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                </Component>
+                <Component name="OrigDate" CardinalityMin="0" CardinalityMax="unbounded">
+                    <Element name="mmdc_origDate" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="origDate" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="notBefore" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="notAfter" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="note" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                </Component>
+                <Component name="Note" CardinalityMin="0" CardinalityMax="1">
+                    <Element name="mmdc_note" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="note" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                </Component>
+            </Component>
+            <Component name="Contents" CardinalityMin="1" CardinalityMax="1">
+                <Component name="Summary" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="mmdc_summary" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="summary" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                </Component>
+                <Component name="textLang" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="mmdc_textLang" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded"/>
+                    <Element name="textLang" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="otherLang" CardinalityMin="0" CardinalityMax="unbounded">
+                        <ValueScheme>
+                            <Vocabulary>
+                                <enumeration>
+                                    <item ConceptLink="" AppInfo="Arabic">ara</item>
+                                    <item ConceptLink="" AppInfo="English">eng</item>
+                                    <item ConceptLink="" AppInfo="French">fra</item>
+                                    <item ConceptLink="" AppInfo="Western Frisian">fry</item>
+                                    <item ConceptLink="" AppInfo="Gaelic">gla</item>
+                                    <item ConceptLink="" AppInfo="German">deu</item>
+                                    <item ConceptLink="" AppInfo="Ancient Greek">grc</item>
+                                    <item ConceptLink="" AppInfo="Hebrew">heb</item>
+                                    <item ConceptLink="" AppInfo="Icelandic">isl</item>
+                                    <item ConceptLink="" AppInfo="Irish">gle</item>
+                                    <item ConceptLink="" AppInfo="Italian">ita</item>
+                                    <item ConceptLink="" AppInfo="Latin">lat</item>
+                                    <item ConceptLink="" AppInfo="Yiddish">yid</item>
+                                    <item ConceptLink="" AppInfo="Middle Low German">gml</item>
+                                    <item ConceptLink="" AppInfo="Uncoded languages">mis</item>
+                                    <item ConceptLink="" AppInfo="Dutch">nld</item>
+                                    <item ConceptLink="" AppInfo="Occitan (post 1500)">oci</item>
+                                    <item ConceptLink="" AppInfo="Old Occitan (to 1500) Old Provençal (to 1500)">pro</item>
+                                    <item ConceptLink="" AppInfo="Spanish">spa</item>
+                                    <item ConceptLink="" AppInfo="Undetermined">und</item>
+                                </enumeration>
+                            </Vocabulary>
+                        </ValueScheme>
+                    </Element>
+                    <Element name="note" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Component name="MainLang" CardinalityMin="1" CardinalityMax="1">
+                        <Element name="mmdc_mainLang" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                        <Element name="mainLang" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                            <ValueScheme>
+                                <Vocabulary>
+                                    <enumeration>
+                                        <item ConceptLink="" AppInfo="Arabic">ara</item>
+                                        <item ConceptLink="" AppInfo="English">eng</item>
+                                        <item ConceptLink="" AppInfo="French">fra</item>
+                                        <item ConceptLink="" AppInfo="Western Frisian">fry</item>
+                                        <item ConceptLink="" AppInfo="Gaelic">gla</item>
+                                        <item ConceptLink="" AppInfo="German">deu</item>
+                                        <item ConceptLink="" AppInfo="Ancient Greek">grc</item>
+                                        <item ConceptLink="" AppInfo="Hebrew">heb</item>
+                                        <item ConceptLink="" AppInfo="Icelandic">isl</item>
+                                        <item ConceptLink="" AppInfo="Irish">gle</item>
+                                        <item ConceptLink="" AppInfo="Italian">ita</item>
+                                        <item ConceptLink="" AppInfo="Latin">lat</item>
+                                        <item ConceptLink="" AppInfo="Yiddish">yid</item>
+                                        <item ConceptLink="" AppInfo="Middle Low German">gml</item>
+                                        <item ConceptLink="" AppInfo="Uncoded languages">mis</item>
+                                        <item ConceptLink="" AppInfo="Dutch">nld</item>
+                                        <item ConceptLink="" AppInfo="Occitan (post 1500)">oci</item>
+                                        <item ConceptLink="" AppInfo="Old Occitan (to 1500) Old Provençal (to 1500">pro</item>
+                                        <item ConceptLink="" AppInfo="Spanish">spa</item>
+                                        <item ConceptLink="" AppInfo="Undetermined">und</item>
+                                    </enumeration>
+                                </Vocabulary>
+                            </ValueScheme>
+                        </Element>
+                    </Component>
+                </Component>
+                <Component name="Item" CardinalityMin="0" CardinalityMax="unbounded">
+                    <Element name="class" ValueScheme="string" CardinalityMin="1" CardinalityMax="unbounded" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="AltTitle" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Multilingual="true" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="rubric" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Multilingual="true"/>
+                    <Element name="finalRubric" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Multilingual="true"/>
+                    <Element name="colophon" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" Multilingual="true"/>
+                    <Element name="itemOrder" CardinalityMin="1" CardinalityMax="1">
+                        <ValueScheme>
+                            <Vocabulary>
+                                <enumeration>
+                                    <item>1</item>
+                                    <item>2</item>
+                                    <item>3</item>
+                                    <item>4</item>
+                                    <item>5</item>
+                                    <item>6</item>
+                                    <item>7</item>
+                                    <item>8</item>
+                                    <item>9</item>
+                                    <item>10</item>
+                                </enumeration>
+                            </Vocabulary>
+                        </ValueScheme>
+                    </Element>
+                    <Component name="Locus" CardinalityMin="1" CardinalityMax="1">
+                        <Element name="mmdc_locus" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                        <Element name="locus" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                        <Component name="From" CardinalityMin="1" CardinalityMax="1">
+                            <Element name="mmdc_from" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                            <Element name="from" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                        </Component>
+                        <Component name="To" CardinalityMin="1" CardinalityMax="1">
+                            <Element name="mmdc_to" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                            <Element name="to" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                        </Component>
+                    </Component>
+                    <Component name="Author" CardinalityMin="0" CardinalityMax="unbounded">
+                        <Element name="ref" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="unbounded"/>
+                        <Element name="mmdc_author" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                        <Element name="author" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    </Component>
+                    <Component name="Title" CardinalityMin="1" CardinalityMax="1">
+                        <Element name="mmdc_title" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                        <Element name="title" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                        <Element name="title_ref" ValueScheme="anyURI" CardinalityMin="0" CardinalityMax="unbounded"/>
+                    </Component>
+                    <Component name="Filiation" CardinalityMin="0" CardinalityMax="1">
+                        <Element name="mmdc_filiation" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                        <Element name="filiation" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    </Component>
+                    <Component name="Note" CardinalityMin="1" CardinalityMax="1">
+                        <Element name="mmdc_note" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                        <Element name="note" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    </Component>
+                    <Component name="Incipit" CardinalityMin="1" CardinalityMax="1">
+                        <Element name="mmdc_incipit" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                        <Element name="incipit" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                        <Element name="mainLang" CardinalityMin="0" CardinalityMax="1">
+                            <ValueScheme>
+                                <Vocabulary>
+                                    <enumeration>
+                                        <item ConceptLink="" AppInfo="Arabic">ara</item>
+                                        <item ConceptLink="" AppInfo="English">eng</item>
+                                        <item ConceptLink="" AppInfo="French">fra</item>
+                                        <item ConceptLink="" AppInfo="Western Frisian">fry</item>
+                                        <item ConceptLink="" AppInfo="Gaelic">gla</item>
+                                        <item ConceptLink="" AppInfo="German">deu</item>
+                                        <item ConceptLink="" AppInfo="Ancient Greek">grc</item>
+                                        <item ConceptLink="" AppInfo="Hebrew">heb</item>
+                                        <item ConceptLink="" AppInfo="Icelandic">isl</item>
+                                        <item ConceptLink="" AppInfo="Irish">gle</item>
+                                        <item ConceptLink="" AppInfo="Italian">ita</item>
+                                        <item ConceptLink="" AppInfo="Latin">lat</item>
+                                        <item ConceptLink="" AppInfo="Yiddish">yid</item>
+                                        <item ConceptLink="" AppInfo="Middle Low German">gml</item>
+                                        <item ConceptLink="" AppInfo="Uncoded languages">mis</item>
+                                        <item ConceptLink="" AppInfo="Dutch">nld</item>
+                                        <item ConceptLink="" AppInfo="Occitan (post 1500)">oci</item>
+                                        <item ConceptLink="" AppInfo="Old Occitan (to 1500) Old Provençal (to 1500)">pro</item>
+                                        <item ConceptLink="" AppInfo="Spanish">spa</item>
+                                        <item ConceptLink="" AppInfo="Undetermined">und</item>
+                                    </enumeration>
+                                </Vocabulary>
+                            </ValueScheme>
+                        </Element>
+                        <Component name="Locus" ComponentRef="clarin.eu:cr1:c_1633000337996" CardinalityMin="0" CardinalityMax="1">
+                            <Element name="locus" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                            <Element name="from" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
+                            <Element name="to" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
+                        </Component>
+                    </Component>
+                    <Component name="Explicit" CardinalityMin="1" CardinalityMax="1">
+                        <Element name="mmdc_explicit" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                        <Element name="explicit" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                        <Element name="mainLang" CardinalityMin="0" CardinalityMax="1">
+                            <ValueScheme>
+                                <Vocabulary>
+                                    <enumeration>
+                                        <item ConceptLink="" AppInfo="Arabic">ara</item>
+                                        <item ConceptLink="" AppInfo="English">eng</item>
+                                        <item ConceptLink="" AppInfo="French">fra</item>
+                                        <item ConceptLink="" AppInfo="Western Frisian">fry</item>
+                                        <item ConceptLink="" AppInfo="Gaelic">gla</item>
+                                        <item ConceptLink="" AppInfo="German">deu</item>
+                                        <item ConceptLink="" AppInfo="Ancient Greek">grc</item>
+                                        <item ConceptLink="" AppInfo="Hebrew">heb</item>
+                                        <item ConceptLink="" AppInfo="Icelandic">isl</item>
+                                        <item ConceptLink="" AppInfo="Irish">gle</item>
+                                        <item ConceptLink="" AppInfo="Italian">ita</item>
+                                        <item ConceptLink="" AppInfo="Latin">lat</item>
+                                        <item ConceptLink="" AppInfo="Yiddish">yid</item>
+                                        <item ConceptLink="" AppInfo="Middle Low German">gml</item>
+                                        <item ConceptLink="" AppInfo="Uncoded languages">mis</item>
+                                        <item ConceptLink="" AppInfo="Dutch">nld</item>
+                                        <item ConceptLink="" AppInfo="Occitan (post 1500)">oci</item>
+                                        <item ConceptLink="" AppInfo="Old Occitan (to 1500) Old Provençal (to 1500)">pro</item>
+                                        <item ConceptLink="" AppInfo="Spanish">spa</item>
+                                        <item ConceptLink="" AppInfo="Undetermined">und</item>
+                                    </enumeration>
+                                </Vocabulary>
+                            </ValueScheme>
+                        </Element>
+                        <Component name="Locus" ComponentRef="clarin.eu:cr1:c_1633000337996" CardinalityMin="0" CardinalityMax="1">
+                            <Element name="locus" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                            <Element name="from" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
+                            <Element name="to" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
+                        </Component>
+                    </Component>
+                    <Component name="TextLang" CardinalityMin="0" CardinalityMax="1">
+                        <Element name="textLang" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                            <ValueScheme>
+                                <Vocabulary>
+                                    <enumeration>
+                                        <item ConceptLink="" AppInfo="Arabic">ara</item>
+                                        <item ConceptLink="" AppInfo="English">eng</item>
+                                        <item ConceptLink="" AppInfo="French">fra</item>
+                                        <item ConceptLink="" AppInfo="Western Frisian">fry</item>
+                                        <item ConceptLink="" AppInfo="Gaelic">gla</item>
+                                        <item ConceptLink="" AppInfo="German">deu</item>
+                                        <item ConceptLink="" AppInfo="Ancient Greek">grc</item>
+                                        <item ConceptLink="" AppInfo="Hebrew">heb</item>
+                                        <item ConceptLink="" AppInfo="Icelandic">isl</item>
+                                        <item ConceptLink="" AppInfo="Irish">gle</item>
+                                        <item ConceptLink="" AppInfo="Italian">ita</item>
+                                        <item ConceptLink="" AppInfo="Latin">lat</item>
+                                        <item ConceptLink="" AppInfo="Yiddish">yid</item>
+                                        <item ConceptLink="" AppInfo="Middle Low German">gml</item>
+                                        <item ConceptLink="" AppInfo="Uncoded languages">mis</item>
+                                        <item ConceptLink="" AppInfo="Dutch">nld</item>
+                                        <item ConceptLink="" AppInfo="Occitan (post 1500)">oci</item>
+                                        <item ConceptLink="" AppInfo="Old Occitan (to 1500) Old Provençal (to 1500)">pro</item>
+                                        <item ConceptLink="" AppInfo="Spanish">spa</item>
+                                        <item ConceptLink="" AppInfo="Undetermined">und</item>
+                                    </enumeration>
+                                </Vocabulary>
+                            </ValueScheme>
+                        </Element>
+                    </Component>
+                </Component>
+            </Component>
+            <Component name="PhysDesc" CardinalityMin="1" CardinalityMax="1">
+                <Element name="additions" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                <Element name="accMat" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                <Element name="musicNotation" CardinalityMin="0" CardinalityMax="unbounded">
+                    <ValueScheme>
+                        <Vocabulary>
+                            <enumeration>
+                                <item>staff notation</item>
+                                <item>neumes (staffless)</item>
+                                <item>other</item>
+                            </enumeration>
+                        </Vocabulary>
+                    </ValueScheme>
+                </Element>
+                <Component name="ObjectDesc" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="form" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                        <ValueScheme>
+                            <Vocabulary>
+                                <enumeration>
+                                    <item>codex</item>
+                                    <item>scroll</item>
+                                    <item>leaf</item>
+                                    <item>codicological_unit</item>
+                                    <item>fragment</item>
+                                    <item>other</item>
+                                    <item>unknown</item>
+                                </enumeration>
+                            </Vocabulary>
+                        </ValueScheme>
+                    </Element>
+                    <Component name="SupportDesc" CardinalityMin="0" CardinalityMax="1">
+                        <Element name="condition" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                        <Element name="foliation" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                        <Component name="Material" CardinalityMin="1" CardinalityMax="1">
+                            <Element name="mmdc_material" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                            <Element name="material" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                                <ValueScheme>
+                                    <Vocabulary>
+                                        <enumeration>
+                                            <item>perg</item>
+                                            <item>chart</item>
+                                            <item>perg_chart</item>
+                                            <item>papyrus</item>
+                                            <item>wood_wax</item>
+                                            <item>other</item>
+                                            <item>unknown</item>
+                                        </enumeration>
+                                    </Vocabulary>
+                                </ValueScheme>
+                            </Element>
+                        </Component>
+                        <Component name="Support" CardinalityMin="1" CardinalityMax="1">
+                            <Element name="mmdc_support" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                            <Element name="support" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                        </Component>
+                        <Component name="Extent" CardinalityMin="1" CardinalityMax="1">
+                            <Component name="MeasureLeavesCount" CardinalityMin="1" CardinalityMax="1">
+                                <Element name="type" CardinalityMin="1" CardinalityMax="1">
+                                    <ValueScheme>
+                                        <Vocabulary>
+                                            <enumeration>
+                                                <item>leavesCount</item>
+                                                <item>pagesCount</item>
+                                            </enumeration>
+                                        </Vocabulary>
+                                    </ValueScheme>
+                                </Element>
+                                <Element name="mmdc_measure" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                                <Element name="measure" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                            </Component>
+                            <Component name="MeasurePageDimensions" CardinalityMin="0" CardinalityMax="1">
+                                <Element name="type" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                                <Element name="mmdc_measure" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                                <Element name="height" ValueScheme="int" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                                <Element name="width" ValueScheme="int" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                            </Component>
+                        </Component>
+                        <Component name="Collation" CardinalityMin="0" CardinalityMax="1">
+                            <Element name="collation" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                            <Component name="Locus" ComponentRef="clarin.eu:cr1:c_1633000337996" CardinalityMin="0" CardinalityMax="1">
+                                <Element name="locus" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                                <Element name="from" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
+                                <Element name="to" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
+                            </Component>
+                        </Component>
+                    </Component>
+                    <Component name="layoutDesc" CardinalityMin="1" CardinalityMax="1">
+                        <Component name="Layout" CardinalityMin="1" CardinalityMax="1">
+                            <Element name="mmdc_layout" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                            <Component name="Columns" CardinalityMin="1" CardinalityMax="1">
+                                <Element name="mmdc_columns" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                                <Element name="columns" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                            </Component>
+                            <Component name="WrittenLines" CardinalityMin="1" CardinalityMax="1">
+                                <Element name="mmdc_writtenLines" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                                <Element name="writtenLines" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                            </Component>
+                            <Component name="MeasureTextBlock" CardinalityMin="0" CardinalityMax="1">
+                                <Element name="mmdc_measure" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                                <Element name="height" ValueScheme="int" CardinalityMin="0" CardinalityMax="1"/>
+                                <Element name="width" ValueScheme="int" CardinalityMin="0" CardinalityMax="1"/>
+                            </Component>
+                        </Component>
+                    </Component>
+                </Component>
+                <Component name="HandDesc" CardinalityMin="1" CardinalityMax="1">
+                    <Element name="hands" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="summary" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Component name="HandNote" CardinalityMin="1" CardinalityMax="unbounded">
+                        <Element name="script" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1">
+                            <ValueScheme>
+                                <Vocabulary>
+                                    <enumeration>
+                                        <item>capitalsRustic</item>
+                                        <item>capitalsSquare</item>
+                                        <item>minusculePreCaroline</item>
+                                        <item>uncial</item>
+                                        <item>halfUncial</item>
+                                        <item>minusculeCaroline</item>
+                                        <item>minusculeVisigothic</item>
+                                        <item>minusculeInsular</item>
+                                        <item>minusculeBeneventan</item>
+                                        <item>praegothic</item>
+                                        <item>gothicTextualis</item>
+                                        <item>textualisSouthern</item>
+                                        <item>textualisNorthern</item>
+                                        <item>Hybrid</item>
+                                        <item>Cursiva</item>
+                                        <item>cursivaTypeA</item>
+                                        <item>cursivaTypeC</item>
+                                        <item>cursivaTypeAC</item>
+                                        <item>cursivaTypeAnglicana</item>
+                                        <item>cursivaTypeBourguignonne</item>
+                                        <item>Humanistica</item>
+                                        <item>humanisticaCursiva</item>
+                                        <item>humanisticaTextualis</item>
+                                        <item>other</item>
+                                    </enumeration>
+                                </Vocabulary>
+                            </ValueScheme>
+                        </Element>
+                        <Element name="mmdc_handNote" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                        <Element name="handNote" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                        <Component name="Locus" ComponentRef="clarin.eu:cr1:c_1633000337996" CardinalityMin="0" CardinalityMax="1">
+                            <Element name="locus" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                            <Element name="from" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
+                            <Element name="to" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
+                        </Component>
+                    </Component>
+                </Component>
+                <Component name="DecoDesc" CardinalityMin="0" CardinalityMax="1">
+                    <Component name="DecoNote" CardinalityMin="1" CardinalityMax="unbounded">
+                        <Element name="mmdc_decoNote" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                        <Element name="decoNote" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                        <Component name="Locus" ComponentRef="clarin.eu:cr1:c_1633000337996" CardinalityMin="0" CardinalityMax="1">
+                            <Element name="locus" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                            <Element name="from" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
+                            <Element name="to" ValueScheme="string" CardinalityMin="1" CardinalityMax="1"/>
+                        </Component>
+                    </Component>
+                </Component>
+                <Component name="bindingDesc" CardinalityMin="0" CardinalityMax="1">
+                    <Component name="Binding" CardinalityMin="0" CardinalityMax="unbounded">
+                        <Element name="mmdc_binding" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                        <Element name="binding" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                        <Element name="notBefore" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                        <Element name="notAfter" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                        <Element name="date" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    </Component>
+                </Component>
+            </Component>
+            <Component name="History" CardinalityMin="1" CardinalityMax="1">
+                <Component name="Origin" CardinalityMin="0" CardinalityMax="1">
+                    <Element name="mmdc_origin" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="origin" ValueScheme="string" CardinalityMin="1" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                </Component>
+                <Component name="Provenance" CardinalityMin="0" CardinalityMax="unbounded">
+                    <Element name="mmdc_provenance" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="provenance" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                </Component>
+                <Component name="Acquisition" CardinalityMin="0" CardinalityMax="1">
+                    <Element name="mmdc_acquisition" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                    <Element name="acquisition" ValueScheme="string" CardinalityMin="0" CardinalityMax="1" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    <Element name="date" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded"/>
+                    <Component name="PersName" CardinalityMin="0" CardinalityMax="unbounded">
+                        <Element name="mmdc_persName" ValueScheme="string" CardinalityMin="0" CardinalityMax="1"/>
+                        <Element name="persName" ValueScheme="string" CardinalityMin="0" CardinalityMax="unbounded" cue:DisplayPriority="1" xmlns:cue="http://www.clarin.eu/cmd/cues/1"/>
+                    </Component>
+                </Component>
+            </Component>
+        </Component>
+    </Component>
+</ComponentSpec>
