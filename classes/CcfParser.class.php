@@ -24,17 +24,19 @@ class Ccfparser {
         $xml = simplexml_load_string($cmdifile);
     }
 
-    function parseTweak($cmdifile, $tweakfile = null, $tweaker = null, $record = null) {
+    function parseTweak($uri, $tweakfile = null, $tweaker = null, $record = null) {
+        error_reporting(0);
         $jsonArray = array();
-
+        $cmdifile = $this->_get_profile($uri);
         if (is_null($tweakfile)) {
             $xml = new DOMDocument();
             $xml->preserveWhiteSpace = false;
-            $xml->load($cmdifile);
+            $xml->loadXML($cmdifile);
         } else {
             $xml = $this->_tweak($cmdifile, $tweakfile, $tweaker);
         }
 
+        //die($xml->saveXML());
 
         $id = $xml->documentElement->getElementsByTagName('ID')->item(0);
         $jsonArray["id"] = $id->nodeValue;
@@ -46,14 +48,16 @@ class Ccfparser {
         return json_encode($jsonArray);
     }
 
-    /* Private functions */
+
+
 
     private function _tweak($cmdifile, $tweakfile, $tweaker) {
         $error_level = error_reporting();
         error_reporting(0);
+        //error_reporting(E_ALL);
         $profile = new DOMDocument();
         $profile->preserveWhiteSpace = false;
-        $profile->load($cmdifile);
+        $profile->loadXML($cmdifile);
 
         $xsl = new DOMDocument;
         $xsl->preserveWhiteSpace = false;
@@ -101,6 +105,23 @@ class Ccfparser {
         return $retArray;
     }
 
+    private function _get_profile($uri) {
+        $options = array('Origin: ' . $_ENV["https://cmdiform.sd.di.huc.knaw.nl"], 'Access-Control-Request-Method: POST', 'Access-Control-Request-Headers: X-Requested-With');
+        try {
+            $ch = curl_init($uri);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, $options);
+            curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "GET");
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            $response = curl_exec($ch);
+            curl_close($ch);
+        } catch (Exception $e) {
+            $response = $e;
+            echo $e;
+        }
+
+        return $response;
+    }
+
     private function _createRecordArray($record) {
         $resources = array();
         $cmdiRec = new DOMDocument();
@@ -118,22 +139,12 @@ class Ccfparser {
         return $retArray;
     }
 
-    private function _hasChild($p) {
-        if ($p->hasChildNodes()) {
-          foreach ($p->childNodes as $c) {
-           if ($c->nodeType == XML_ELEMENT_NODE)
-            return true;
-          }
-        }
-        return false;
-    }
-
     private function _parseRecord($xml, $resources) {
         $retArray = array();
         foreach ($xml->childNodes as $node) {
-            $name = $node->localName;
+            $name = substr($node->nodeName, 4);
             if ($node->hasChildNodes()) {
-                if (!$this->_hasChild($node)) {
+                if ($node->firstChild->nodeType == 3) {
                     $attributes = $this->_getValueAttributes($node, $resources);
                     if ($attributes) {
                         $retArray[] = array("name" => $name, "type" => "element", "value" => $node->nodeValue, "attributes" => $attributes);
@@ -217,17 +228,20 @@ class Ccfparser {
         $retArr = array();
         $tempArr = array();
         foreach ($arr as $element) {
-            if ($element["type"] == "Component") {
-                $tempArr[] = $element;
-            } else {
+            //if ($element["type"] == "Component") {
+            //    $tempArr[] = $element;
+            //} else {
                 if (isset($element["attributes"]["displayOrder"])) {
                     $retArr[] = $element;
                 } else {
                     $tempArr[] = $element;
                 }
-            }
+            //}
         }
+
         usort($retArr, array(__CLASS__, 'cmp'));
+        $arr = json_encode($retArr);
+        file_put_contents(dirname(dirname(__FILE__)) . '/array.json', $arr);
         foreach ($tempArr as $element) {
             $retArr[] = $element;
         }
@@ -238,13 +252,14 @@ class Ccfparser {
         if ($a["attributes"]["displayOrder"] == $b["attributes"]["displayOrder"]) {
             return 0;
         } else {
-            return ($a["attributes"]["displayOrder"] < $b["attributes"]["displayOrder"]) ? -1 : 1;
+            return ($a["attributes"]["displayOrder"]*1 < $b["attributes"]["displayOrder"]*1) ? -1 : 1;
         }
     }
 
     private function _getNodeAttributes($node, $i) {
         $retArray = array();
         foreach ($node->attributes as $attribute) {
+            //error_log($attribute->nodeName . ": " . $attribute->nodeValue);
             switch ($attribute->nodeName) {
                 case 'ValueScheme':
                 case 'CardinalityMin':
@@ -264,7 +279,10 @@ class Ccfparser {
                     break;
                 case 'name':
                     $retArray["name"] = $attribute->nodeValue;
-                    $retArray["label"] = $attribute->nodeValue;
+                    $retArray["label"] = preg_replace('/(?<! )(?<!^)(?<![A-Z])[A-Z]/ ', ' $0', $attribute->nodeValue);
+                    if (strlen($retArray["label"])) {
+                        $retArray["label"][0] = strtoupper($retArray["label"][0]);
+                    }
                     break;
                 case 'cue:displayOrder':
                     $retArray["displayOrder"] = $attribute->nodeValue;
@@ -298,11 +316,11 @@ class Ccfparser {
                 case 'clariah:isTab':
                     $retArray["isTab"] = $child->nodeValue;
                     break;
-//                case 'clariah:inputField':
-//                    $this->_inputFieldDimensions($child, $retArray);
-//                    break;
                 case 'clariah:resource':
                     $retArray["resource"] = $child->nodeValue;
+                    break;
+                case 'clariah:explanation':
+                    $retArray["explanation"] = $child->nodeValue;
                     break;
                 case 'AttributeList':
                     $retArray["attributeList"] = $this->_createAttributeList($child);
@@ -331,6 +349,10 @@ class Ccfparser {
             }
         }
         return $retArray;
+    }
+
+    private function pimpName($str) {
+
     }
     
     private function _createAttributeList($node){
@@ -361,12 +383,12 @@ class Ccfparser {
     }
 
     private function _getOtherAutoValues($value) {
-        $parts = explode(":", $value);
-        if (count($parts) == 2) {
-            return array("type" => $parts[0], "value" => $parts[1]);
-        } else {
-            return "";
-        }
+        //$parts = explode(":", $value);
+        //if (count($parts) == 2) {
+        //    return array("type" => $parts[0], "value" => $parts[1]);
+        //} else {
+            return $value;
+        //}
     }
 
     private function _inputFieldDimensions($node, &$retArray) {
